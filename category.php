@@ -158,7 +158,7 @@
 							foreach ($whatisthis as $pagepost){
 						?>
 								<h2 class="post-title-grid">
-									<a href="<?php echo get_permalink( $pagepost->ID ); ?>"><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?></a>
+									<a href="<?php echo get_permalink( $pagepost->ID ); ?>"><?php  echo limit_character_count( apply_filters( 'the_title', $pagepost->post_title ), 23); ?></a>
 								</h2>
 								<a href="<?php echo get_permalink( $pagepost->ID ); ?>">
 								    <?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'grid-thumb' ) ) ; ?>
