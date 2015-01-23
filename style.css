@@ -676,9 +676,11 @@ body {
 
 main {
     width: 990px;
-    margin: 3.4rem auto 0;
+    /*margin: 3.4rem auto 0;*/
+    margin: 147px auto 0;
     padding: 2.7rem 3rem;
-    min-height: 850px
+    min-height: 850px;
+    position: relative;
 }
 
 body.archive main,
@@ -690,9 +692,28 @@ body.single main {
     padding: 45px 0
 }
 
+.translate-up {
+  transition: transform 500ms;
+  -webkit-transition: transform 500ms;
+  transform: translateX(0px) translateY(-111px);
+}
+
+.translate-down {
+  transition: transform 500ms;
+  -webkit-transition: transform 500ms;
+  transform: translateX(0px) translateY(0px);
+}
+
+header.header {
+  position: fixed;
+  top: 0;
+  z-index: 9;
+}
+
 .header {
     width: 100%;
-    background-color: #fff
+    background-color: rgb(255,255,255);
+    background-color: rgba(255,255,255,0.8);
 }
 
 .header-wrap {

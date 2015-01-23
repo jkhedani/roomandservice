@@ -31,13 +31,13 @@
 		<div class="wrapper">
 			<!-- header -->
 
-			<header class="header clear" role="banner">
+			<header class="header clear translate-down" role="banner">
 					<div class="header-wrap">
 					<!-- logo -->
 					<div class="logo">
 						<a href="<?php echo home_url(); ?>">
 							<!-- svg available do later -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/rm-logo.jpg" alt="Room and Service Logo" class="logo-img">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/rm-logo.png" alt="Room and Service Logo" class="logo-img">
 						</a>
 					</div>
 					<!-- /logo -->
