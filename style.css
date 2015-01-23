@@ -888,14 +888,14 @@ header.header {
 .island-filter {
     float: right;
     margin-top: 1.2rem;
-    width: 256px;
 }
 
 .island-filter h3.dropdown {
+    font-family: 'source-sans-pro', sans-serif;
     margin: 0;
     font-size: 1.2rem;
     /*width: 230px;*/
-    height: 34px;
+    height: 29px;
     background: #ccc;
     line-height: 3.2rem;
     color: #fff;
@@ -907,15 +907,15 @@ header.header {
     display: block;
     position: relative;
     background-color: red;
-    width: 34px;
-    height: 34px;
+    width: 29px;
+    height: 29px;
     background-color: #7F7F7F;
     float: right;
 }
 
 .island-filter h3.dropdown:after {
-    width: 20px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
     background-image: url("img/icons/sprite-sheet.png") !important;
     background-position: 0 -428px;
     content: '';
@@ -923,7 +923,7 @@ header.header {
     position: relative;
     float: right;
     right: -28px;
-    top: 6px;
+    top: 5px;
 }
 
 .island-filter .island-filter-list,.island-filter .select_click {
@@ -1142,9 +1142,9 @@ body.home .slide-data .slide-title.flexslider-hg-title {
     margin-top: 20px;
     width: 294px;
     background-color: #FFF;
-    padding: 40px 25px;
-
-    max-height: 844px;
+    padding: 28px 22px;
+    min-height: 845px;
+    max-height: 845px;
     box-shadow: 1px 1px 5px #CECECE;
 }
 
@@ -1189,10 +1189,10 @@ body.home .slide-data .slide-title.flexslider-hg-title {
 }
 
 .hotel-img-link {
-    /*display: inline-block;
-    width: 110px;
-    float: left;
-    display: table-cell*/
+  display: block;
+  height: 114px;
+  width: auto;
+  overflow: hidden;
 }
 
 .hotel-img-link-title {
@@ -1200,7 +1200,7 @@ body.home .slide-data .slide-title.flexslider-hg-title {
   font-size: 16px;
   font-weight: 400;
   display: block;
-  margin: 20px 0 40px;
+  margin: 7px 0 40px;
 }
 
 .hotel-filter-list li {
@@ -1214,6 +1214,7 @@ body.home .slide-data .slide-title.flexslider-hg-title {
     margin-top: 0;
     color: #0E0E0E;
     font-weight: 400;
+    text-decoration: underline;
 }
 
 .oahu-border {
