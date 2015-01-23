@@ -35,6 +35,7 @@ if (function_exists('add_theme_support'))
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
     add_image_size('featured-thumb', 420, 250, true);
     add_image_size('small-hotel-thumb', 103, 46, true);
+    add_image_size('medium-hotel-thumb', 254, 114, true);
     add_image_size('stay-thumb', 248, 130, true);
     add_image_size('related-thumb', 192, 112, true);
     add_image_size('grid-thumb', 265, 165, true);
