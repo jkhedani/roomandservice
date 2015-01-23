@@ -25,10 +25,10 @@
 					var cat = temp[temp.length-2];
 					cat = cat.split("+");
 					cat = cat[1];
-					if(cat=="maui"){document.write(': Maui');}
-					else if(cat=="oahu"){document.write(': Oahu');}
-					else if(cat=="kauai"){document.write(': Kauai');}
-					else if(cat=="big-island"){document.write(': Big Island');}
+					if(cat=="maui"){document.write('+ Maui');}
+					else if(cat=="oahu"){document.write('+ Oahu');}
+					else if(cat=="kauai"){document.write('+ Kauai');}
+					else if(cat=="big-island"){document.write('+ Big Island');}
 					else{};
 			</script>
 
