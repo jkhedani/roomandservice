@@ -399,6 +399,13 @@ h2 {
   display: none;
 }
 
+.image-wrap {
+  text-align: center;
+}
+.image-wrap img {
+  display: inline-block;
+  margin: 0 -50%;
+}
 .quarter-col .image-wrap, .half-col .image-wrap {
   height: 220px;
   overflow: hidden;
