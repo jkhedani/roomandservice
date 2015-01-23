@@ -119,10 +119,10 @@
 				</ul>
 				<a href="<?php echo get_bloginfo('url'); ?>/category/hotel+maui/" class="hotel-filter-all">VIEW ALL</a>
 				</div>
-						
+
 				<div class="hotel_selector_kauai hide_me_ok">
                 <ul class="hotel-filter-list">
-				<?php 	
+				<?php
 				if(get_field('acf_kauai_hotels', 'option')){
 					$whatisthis = get_field('acf_kauai_hotels', 'option');
 					foreach ($whatisthis as $pagepost){
@@ -132,16 +132,16 @@
 						<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'small-hotel-thumb' ) ) ; ?></a>
                     <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
                 </li>
-				<?php 
-					}}; 
+				<?php
+					}};
 				?>
 				</ul>
 				<a href="<?php echo get_bloginfo('url'); ?>/category/hotel+kauai/" class="hotel-filter-all">VIEW ALL</a>
 				</div>
-						
+
 				<div class="hotel_selector_big_island hide_me_ok">
                 <ul class="hotel-filter-list">
-				<?php 	
+				<?php
 				if(get_field('acf_big_island_hotels', 'option')){
 					$whatisthis = get_field('acf_big_island_hotels', 'option');
 					foreach ($whatisthis as $pagepost){
@@ -151,13 +151,13 @@
                     <?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'small-hotel-thumb' ) ) ; ?></a>
                     <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
 				</li>
-				<?php 
-					}}; 
+				<?php
+					}};
 				?>
 				</ul>
 				<a href="<?php echo get_bloginfo('url'); ?>/category/hotel+big-island/" class="hotel-filter-all">VIEW ALL</a>
 				</div>
-				
+
 			</div>
 			<script type="text/javascript">
 			jQuery(".select_click li").click(function() {
@@ -165,29 +165,35 @@
 				var namez = jQuery(this).html();
 				hideHotels(value,namez);
 			});
-			</script>		
+			</script>
 		</aside>
 
 		<section class="editorial clear">
-			<?php 
+			<?php
 				$whatisthis = get_field('acf_editorials', 'option');
 				foreach ($whatisthis as $pagepost){
 			?>
-			<div class="editorial-article">			
-				<p class="editorial-cat"> 			
-					<?php 
-						$catz = get_the_category( $pagepost->ID ); 
-						foreach ($catz as $post_cat){ 
+			<div class="editorial-article">
+				<a href="<?php echo get_permalink( $pagepost->ID ); ?>"><?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'grid-thumb' ) ) ; ?></a>
+				<p class="editorial-cat">
+					<?php
+						$catz = get_the_category( $pagepost->ID );
+						foreach ($catz as $post_cat){
 							echo($post_cat->name);
 							break;
 						};
 					?>
 				</p>
-
-				<h2 class="editorial-title"><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?></h2>
-				<a href="<?php echo get_permalink( $pagepost->ID ); ?>"><?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'grid-thumb' ) ) ; ?></a>
-				<p class="editorial-excerpt"><?php  echo apply_filters( 'the_excerpt', $pagepost->post_excerpt ); ?></p>
-				<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="editorial-more">Read More...</a>
+				<h2 class="editorial-title">
+					<?php
+						$title = apply_filters( 'the_title', $pagepost->post_title );
+						echo limit_character_count( $title, 23 );
+					?>
+				</h2>
+				<p class="editorial-excerpt">
+					<?php echo limit_character_count( the_excerpt(), 130 ); ?>
+				</p>
+				<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="editorial-more">+ Read More...</a>
 			</div>
 		<?php }; ?>
 		</section>
