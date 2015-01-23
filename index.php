@@ -25,36 +25,48 @@
 		<section>
 
 		<?php get_template_part('slider'); ?>
-		
 
 		</section>
 		<!-- /section -->
+
 		<section class="featured-articles">
-		
-		<?php 
+		<?php
 			$whatisthis = get_field('acf_hero_articles', 'option');
 			foreach ($whatisthis as $pagepost){
 		?>
-			
-			<div class="featured-articles-article">
-				<p class="featured-articles-cat">
-					<?php 
-						$catz = get_the_category( $pagepost->ID ); 
-						foreach ($catz as $post_cat){ 
-							echo($post_cat->name); 
-							break;
-						};
-					?>
-				</p>
-					<h2 class="featured-articles-title"><a href="<?php echo get_permalink( $pagepost->ID ); ?>"><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?></a></h2>
-					<a href="<?php echo get_permalink( $pagepost->ID ); ?>"><?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'featured-thumb' ) ) ; ?></a>
-					<p class="featured-articles-excerpt"><?php  echo apply_filters( 'the_excerpt', $pagepost->post_excerpt ); ?></p>
-					<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="featured-articles-more">Read More...</a>
-				</div>
-		<?php }; ?>
 
+		<div class="featured-articles-article">
+			<a href="<?php echo get_permalink( $pagepost->ID ); ?>">
+				<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'featured-thumb' ) ) ; ?>
+			</a>
+			<p class="featured-articles-cat">
+				<?php
+					$catz = get_the_category( $pagepost->ID );
+					foreach ($catz as $post_cat){
+						echo($post_cat->name);
+						break;
+					};
+				?>
+			</p>
+			<a href="<?php echo get_permalink( $pagepost->ID ); ?>">
+				<h2 class="featured-articles-title">
+					<?php
+						$title = apply_filters( 'the_title', $pagepost->post_title );
+						echo limit_character_count( $title, 26 );
+					?>
+				</h2>
+			</a>
+			<p class="featured-articles-excerpt">
+				<?php
+					$excerpt = apply_filters( 'the_excerpt', $pagepost->post_excerpt );
+					echo limit_character_count( $excerpt, 170 );
+				?>
+			</p>
+			<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="featured-articles-more">+ Read More...</a>
+		</div>
+
+		<?php }; ?>
 		</section>
-		
 		<aside class="hotel-filter">
 			<div class="hotel_selector  island-filter">
 				<h3 class="hotel_selector_title">Where To Stay</h3>
