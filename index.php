@@ -71,12 +71,12 @@
 		<aside class="hotel-filter">
 			<div class="hotel_selector  island-filter">
 				<h3 class="hotel_selector_title">Where To Stay</h3>
-				<h3 class="island-filter-button dropdown" val="oahu">Go To...</h3>
+				<h3 class="island-filter-button dropdown" val="oahu">Oahu Hotels</h3>
 				<ul class="select_click island-filter-menu close">
-					<li val="oahu">OAHU HOTELS</li>
-					<li val="maui">MAUI HOTELS</li>
-					<li val="kauai">KAUAI HOTELS</li>
-					<li val="big_island">BIG ISLAND HOTELS</li>
+					<li val="oahu">Oahu Hotels</li>
+					<li val="maui">Maui Hotels</li>
+					<li val="kauai">Kauai Hotels</li>
+					<li val="big_island">Big Island Hotels</li>
 				</ul>
 				<div class="hotel_selector_oahu hide_me_ok">
 					<ul class="hotel-filter-list">
@@ -89,7 +89,7 @@
 					?>
 					<li>
 					  <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link">
-						<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'small-hotel-thumb' ) ) ; ?></a>
+						<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'medium-hotel-thumb' ) ) ; ?></a>
             <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
 					</li>
 				<?php
