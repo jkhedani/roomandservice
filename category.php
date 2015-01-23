@@ -54,12 +54,13 @@
 					jQuery('#content').infinitescroll('filterIsland',newUrl);
 
 				};
-				
+
 			</script>
 			<style>
 				.pagination{ display: none;}
 			</style>
 
+			<?php if ( is_category( 'culture' ) || is_category( 'style' ) || is_category( 'food' ) || is_category('arts') ) : ?>
 			<div class="island-filter">
 				<h3 class="island-filter-button dropdown">Filter by Island</h3>
 				<ul class="island-filter-menu island-filter-list close">
@@ -69,16 +70,18 @@
 					<li><a href="" onclick="filterIsland('big-island')">Big Island</a></li>
 				</ul>
 			</div>
+			<?php endif; ?>
+
 			<!-- slider -->
-			<?php		
+			<?php
 					$testz = single_cat_title("", false);
 					$testz = strtolower($testz);
 					$onthis = $testz;
-					$testz = "acf_slider_".$testz;	
-					$whatisthis = get_field($testz , 'option');	
+					$testz = "acf_slider_".$testz;
+					$whatisthis = get_field($testz , 'option');
 			?>
 			<div class="slider">
-			<?php 
+			<?php
 				if(function_exists('show_flexslider_rotator') && $whatisthis) echo show_flexslider_rotator($whatisthis);
 			?>
 			</div>
@@ -86,9 +89,9 @@
 
 			<?php if(is_category( 'culture' ) || is_category( 'style' ) || is_category( 'food' ) || is_category('arts')) : ?>
 				<section class="featured-articles">
-		
-					<?php 
-						
+
+					<?php
+
 						if(get_field('acf_'.$onthis.'_cat_featured', 'option')){
 						$whatisthis = get_field('acf_'.$onthis.'_cat_featured', 'option');
 						foreach ($whatisthis as $pagepost){
@@ -105,27 +108,28 @@
 			<?php endif; ?>
 
 				<div id="content" class="clear three-col-wrap">
-				
+
 				<!-- hotel listing for select categoru -->
-				<?php if(is_category( 'eat' ) || is_category( 'shop' ) || is_category( 'play' )) : 
-				
+				<?php $shown = false; if ( $shown === true ) : ?>
+				<?php if(is_category( 'eat' ) || is_category( 'shop' ) || is_category( 'play' )) :
+
 						$strz = curPageURL();
 							$strz = (explode("/",$strz));
-							
+
 							$dim = sizeof($strz);
 							$strz = $strz[$dim-2];
 							$strz = (explode("+",$strz));
-							
+
 							$dim = sizeof($strz);
 							if($dim>1){
 								$strz = $strz[1];
 							}?>
-					<div class="three-col-rtl">
+					<div class="three-col-rtl" style="display:none;">
 						<div class="hotel-list-small">
 							<h2 class="hotel-list-small-title">Hotels on <?php echo ucfirst($strz); ?></h2>
 							<ul class="hotel-list-small-list">
-							<?php 
-							
+							<?php
+
 							if(get_field('acf_'.$strz.'_hotels', 'option')&&($dim>1)){
 								$whatisthis = get_field('acf_'.$strz.'_hotels', 'option');
 								$count = 0;
@@ -136,24 +140,23 @@
 									<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'small-hotel-thumb' ) ) ; ?></a>
 									<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?></span></a>
 								</li>
-							<?php 
+							<?php
 									$count++;
 									if($count >=3){break;}
 								}
 							?>
 							</ul>
 								<a href="<?php echo get_bloginfo('url'); ?>/category/hotel+<?php echo $strz; ?>/" class="hotel-filter-all">VIEW ALL</a>
-							<?php 
-							}; 
+							<?php
+							};
 							?>
 						</div>
 					</div>
 				<?php endif; ?>
-				
-				
-					<?php 
-						if(get_field('acf_'.$onthis.'_sponsor', 'option')){
-						?><div class="three-col"><?php 
+				<?php endif; ?>
+
+					<?php if(get_field('acf_'.$onthis.'_sponsor', 'option')){ ?>
+						<div class="three-col"><?php
 							$whatisthis = get_field('acf_'.$onthis.'_sponsor', 'option');
 							foreach ($whatisthis as $pagepost){
 						?>
@@ -163,13 +166,13 @@
 								<a href="<?php echo get_permalink( $pagepost->ID ); ?>">
 								    <?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'grid-thumb' ) ) ; ?>
 								</a>
-								<p><?php  echo apply_filters( 'the_excerpt', $pagepost->post_excerpt ); ?></p>
-								
+								<p class="excerpt"><?php  echo apply_filters( 'the_excerpt', $pagepost->post_excerpt ); ?></p>
+								<a class="editorial-more" href="<?php echo get_the_permalink(); ?>">+ Read More</a>
 						<?php }?> </div><?php } ?>
-				
+
 
 				<?php get_template_part('loop'); ?>
-			
+
 			</div>
 
 			<?php get_template_part('pagination'); ?>
@@ -178,8 +181,7 @@
 
 				<!-- /section -->
 	</main>
-	
+
 <?php //get_sidebar(); ?>
 
 <?php get_footer(); ?>
-
