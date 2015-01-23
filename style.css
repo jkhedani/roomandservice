@@ -741,7 +741,8 @@ body.single main {
 
 .logo {
     padding-top: 3.6rem;
-    float: left
+    float: left;
+    max-width: 283px;
 }
 
 .nav-header {
