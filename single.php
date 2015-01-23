@@ -79,7 +79,7 @@
 				<?php endif; ?>
 				<!-- /post thumbnail -->
 				<h3 class="hotel-listing-title">
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					<a href="<?php the_permalink(); ?>"><?php echo limit_character_count(get_the_title(), 22); ?></a>
 				</h3>
 				<?php the_excerpt(); ?>
 			</div>
