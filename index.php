@@ -198,167 +198,207 @@
 		<?php }; ?>
 		</section>
 
+	</main>
+
+	<div class="waypoints">
 
 		<?php 	$whatisthis = get_field('acf_oahu', 'option');?>
 		<div class="waypoint oahu-border" id="oahu">
-			<h3>OAHU GUIDE</h3>
+			<h3 class="island-guide">Island Guide</h3>
+			<h2 class="island-title">OAHU</h2>
 			<div class="three-col-wrap">
-			<?php while(has_sub_field('acf_oahu', 'option')): ?>
-				<div class="eat three-col">
-    				<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
-    				    <h2 class="post-title-grid"><?php  echo apply_filters( 'the_title', $whatisthis[0]["eat"][0]->post_title ); ?></h2>
-    				</a>
-    				<p class="hovering-cat">Eat</p>
-    				<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
-    				    <?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-thumb' ) ) ; ?>
-    				</a>
-    				<p class=""><?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["eat"][0]->post_excerpt ); ?></p>
-				</div>
-				<div class="shop three-col">
-    				<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
-    				    <h2 class="post-title-grid"><?php  echo apply_filters( 'the_title', $whatisthis[0]["shop"][0]->post_title ); ?></h2>
-    				</a>
-    				<p class="hovering-cat">Shop</p>
-    				<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
-    				    <?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-thumb' ) ) ; ?>
-    				</a>
-    				<p> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["shop"][0]->post_excerpt ); ?></p>
-				</div>
-				<div class="play three-col">
-    				<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
-    				    <h2 class="post-title-grid"><?php  echo apply_filters( 'the_title', $whatisthis[0]["play"][0]->post_title ); ?></h2>
-    				</a>
-    				<p class="hovering-cat">Play</p>
-    				<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
-    				<?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-thumb' ) ) ; ?>
-    				</a>
-    				<p> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["play"][0]->post_excerpt ); ?></p>
-				</div>
-			<?php endwhile; ?>
+				<?php while(has_sub_field('acf_oahu', 'option')): ?>
+
+					<div class="shop half-col">
+						<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
+							<div class="image-wrap">
+								<?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-thumb' ) ) ; ?>
+							</div>
+							<div class="text-wrap">
+								<h2 class="post-title-grid"><?php echo apply_filters( 'the_title', $whatisthis[0]["shop"][0]->post_title ); ?></h2>
+								<p class="cat">Shop</p>
+							</div>
+						</a>
+						<p class="excerpt"> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["shop"][0]->post_excerpt ); ?></p>
+					</div>
+
+					<div class="eat quarter-col">
+						<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
+							<div class="image-wrap">
+								<?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-thumb' ) ) ; ?>
+							</div>
+							<div class="text-wrap">
+								<h2 class="post-title-grid"><?php echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["eat"][0]->post_title ), 22); ?></h2>
+								<p class="cat">Eat</p>
+							</div>
+						</a>
+						<p class="excerpt"><?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["eat"][0]->post_excerpt ); ?></p>
+					</div>
+
+					<div class="play quarter-col">
+						<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
+							<div class="image-wrap">
+								<?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-thumb' ) ) ; ?>
+							</div>
+							<div class="text-wrap">
+								<h2 class="post-title-grid"><?php echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["play"][0]->post_title ), 22); ?></h2>
+								<p class="cat">Play</p>
+							</div>
+						</a>
+						<p class="excerpt"> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["play"][0]->post_excerpt ); ?></p>
+					</div>
+
+				<?php endwhile; ?>
 			</div>
 		</div>
-		
+
 		<?php 	$whatisthis = get_field('acf_maui', 'option');?>
 		<div class="waypoint" id="maui">
-			<h3>MAUI GUIDE</h3>			
+			<h2 class="island-title">MAUI GUIDE</h2>
 			<div class="three-col-wrap">
-			<?php while(has_sub_field('acf_maui', 'option')): ?>
-				<div class="eat three-col">
-    				<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
-    				    <h2 class="post-title-grid"><?php  echo apply_filters( 'the_title', $whatisthis[0]["eat"][0]->post_title ); ?></h2></a>
-    				<p class="hovering-cat">Eat</p>
-    				<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
-    				<?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-thumb' ) ) ; ?>
-    				</a>
-    				<p> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["eat"][0]->post_excerpt ); ?></p>
+				<?php while(has_sub_field('acf_maui', 'option')): ?>
+
+					<div class="shop quarter-col">
+						<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
+							<div class="image-wrap">
+								<?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-thumb' ) ) ; ?>
+							</div>
+							<div class="text-wrap">
+								<h2 class="post-title-grid"><?php  echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["shop"][0]->post_title ), 22); ?></h2>
+								<p class="cat">Shop</p>
+							</div>
+						</a>
+						<p class="excerpt"> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["shop"][0]->post_excerpt ); ?></p>
+					</div>
+
+					<div class="eat quarter-col">
+						<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
+							<div class="image-wrap">
+								<?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-thumb' ) ) ; ?>
+							</div>
+							<div class="text-wrap">
+								<h2 class="post-title-grid"><?php echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["eat"][0]->post_title ), 22); ?></h2>
+								<p class="cat">Eat</p>
+							</div>
+						</a>
+						<p class="excerpt"><?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["eat"][0]->post_excerpt ); ?></p>
+					</div>
+
+					<div class="play half-col">
+						<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
+							<div class="image-wrap">
+								<?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-thumb' ) ) ; ?>
+							</div>
+							<div class="text-wrap">
+								<h2 class="post-title-grid"><?php echo apply_filters( 'the_title', $whatisthis[0]["play"][0]->post_title ); ?></h2>
+								<p class="cat">Play</p>
+							</div>
+						</a>
+						<p class="excerpt"> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["play"][0]->post_excerpt ); ?></p>
+					</div>
+
+					<?php endwhile; ?>
 				</div>
-				<div class="shop three-col">
-    				<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
-    				    <h2 class="post-title-grid"><?php  echo apply_filters( 'the_title', $whatisthis[0]["shop"][0]->post_title ); ?></h2>
-    				</a>
-    				<p class="hovering-cat">Shop</p>
-    				<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
-    				    <?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-thumb' ) ) ; ?>
-    				</a>
-    				<p> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["shop"][0]->post_excerpt ); ?></p>
-				</div>
-				<div class="play three-col">
-    				<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
-    				    <h2 class="post-title-grid"><?php  echo apply_filters( 'the_title', $whatisthis[0]["play"][0]->post_title ); ?></h2>
-    				</a>
-    				<p class="hovering-cat">Play</p>
-    				<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
-    				    <?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-thumb' ) ) ; ?>
-    				</a>
-    				<p> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["play"][0]->post_excerpt ); ?></p>
-				</div>
-			<?php endwhile; ?>
 			</div>
-		</div>
-			
-		<?php 	$whatisthis = get_field('acf_kauai', 'option');?>
-		<div class="waypoint" id="kauai">
-			<h3>KAUAI GUIDE</h3>
-			<div class="three-col-wrap">
-			<?php while(has_sub_field('acf_kauai', 'option')): ?>
-				<div class="eat three-col">
-    				<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
-    				    <h2 class="post-title-grid"><?php  echo apply_filters( 'the_title', $whatisthis[0]["eat"][0]->post_title ); ?></h2>
-    				</a>
-    				<p class="hovering-cat">Eat</p>
-    				<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
-    				    <?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-thumb' ) ) ; ?>
-    				</a>
-    				<p> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["eat"][0]->post_excerpt ); ?></p>
+
+			<?php 	$whatisthis = get_field('acf_kauai', 'option');?>
+			<div class="waypoint" id="kauai">
+				<h2 class="island-title">KAUAI GUIDE</h2>
+				<div class="three-col-wrap">
+					<?php while(has_sub_field('acf_kauai', 'option')): ?>
+						<div class="shop quarter-col">
+							<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
+								<div class="image-wrap">
+									<?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-thumb' ) ) ; ?>
+								</div>
+								<div class="text-wrap">
+									<h2 class="post-title-grid"><?php  echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["shop"][0]->post_title ), 22); ?></h2>
+									<p class="cat">Shop</p>
+								</div>
+							</a>
+							<p class="excerpt"> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["shop"][0]->post_excerpt ); ?></p>
+						</div>
+
+						<div class="eat half-col">
+							<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
+								<div class="image-wrap">
+									<?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-thumb' ) ) ; ?>
+								</div>
+								<div class="text-wrap">
+									<h2 class="post-title-grid"><?php echo apply_filters( 'the_title', $whatisthis[0]["eat"][0]->post_title ); ?></h2>
+									<p class="cat">Eat</p>
+								</div>
+							</a>
+							<p class="excerpt"><?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["eat"][0]->post_excerpt ); ?></p>
+						</div>
+
+						<div class="play quarter-col">
+							<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
+								<div class="image-wrap">
+									<?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-thumb' ) ) ; ?>
+								</div>
+								<div class="text-wrap">
+									<h2 class="post-title-grid"><?php echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["play"][0]->post_title ), 22); ?></h2>
+									<p class="cat">Play</p>
+								</div>
+							</a>
+							<p class="excerpt"> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["play"][0]->post_excerpt ); ?></p>
+						</div>
+					<?php endwhile; ?>
 				</div>
-				<div class="shop three-col">
-    				<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
-    				    <h2 class="post-title-grid"><?php  echo apply_filters( 'the_title', $whatisthis[0]["shop"][0]->post_title ); ?></h2>
-    				</a>
-    				<p class="hovering-cat">Shop</p>
-    				<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
-    				    <?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-thumb' ) ) ; ?>
-    				</a>
-    				<p> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["shop"][0]->post_excerpt ); ?></p>
-				</div>
-				<div class="play three-col">
-    				<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
-    				    <h2 class="post-title-grid"><?php  echo apply_filters( 'the_title', $whatisthis[0]["play"][0]->post_title ); ?></h2>
-    				</a>
-    				<p class="hovering-cat">Play</p>
-    				<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
-    				    <?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-thumb' ) ) ; ?>
-    				</a>
-    				<p> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["play"][0]->post_excerpt ); ?></p>
-				</div>
-			<?php endwhile; ?>
-			</div>		
-		</div>
-				
-		<?php 	$whatisthis = get_field('acf_big_island', 'option');?>
-		<div class="waypoint" id="big-island">
-			<h3>BIG ISLAND GUIDE</h3>
-			<div class="three-col-wrap">
-			<?php while(has_sub_field('acf_big_island', 'option')): ?>
-				<div class="eat three-col">
-    				<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
-    				    <h2 class="post-title-grid"> <?php  echo apply_filters( 'the_title', $whatisthis[0]["eat"][0]->post_title ); ?></h2>
-    				</a>
-    				<p class="hovering-cat">Eat</p>
-    				<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
-    				    <?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-thumb' ) ) ; ?>
-    				</a>
-    				<p><?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["eat"][0]->post_excerpt ); ?></p>
-				</div>
-				<div class="shop three-col">
-    				<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
-    				    <h2 class="post-title-grid"><?php  echo apply_filters( 'the_title', $whatisthis[0]["shop"][0]->post_title ); ?></h2>
-    				</a>
-    				<p class="hovering-cat">Shop</p>
-    				<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
-    				<?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-thumb' ) ) ; ?>
-    				</a>
-    				<p><?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["shop"][0]->post_excerpt ); ?></p>
-				</div>
-				<div class="play three-col">
-    				<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
-    				    <h2 class="post-title-grid"><?php  echo apply_filters( 'the_title', $whatisthis[0]["play"][0]->post_title ); ?></h2>
-    				</a>
-    				<p class="hovering-cat">Play</p>
-    				<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
-    				    <?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-thumb' ) ) ; ?>
-    				</a>
-    				<p><?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["play"][0]->post_excerpt ); ?></p>
-				</div>
-			<?php endwhile; ?>
 			</div>
-		</div>
-		
-		
-	</main>
+
+			<?php 	$whatisthis = get_field('acf_big_island', 'option');?>
+			<div class="waypoint" id="big-island">
+				<h2 class="island-title">BIG ISLAND GUIDE</h2>
+				<div class="three-col-wrap">
+					<?php while(has_sub_field('acf_big_island', 'option')): ?>
+						<div class="shop half-col">
+							<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
+								<div class="image-wrap">
+									<?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-thumb' ) ) ; ?>
+								</div>
+								<div class="text-wrap">
+									<h2 class="post-title-grid"><?php  echo apply_filters( 'the_title', $whatisthis[0]["shop"][0]->post_title ); ?></h2>
+									<p class="cat">Shop</p>
+								</div>
+							</a>
+							<p class="excerpt"> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["shop"][0]->post_excerpt ); ?></p>
+						</div>
+
+						<div class="eat quarter-col">
+							<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
+								<div class="image-wrap">
+									<?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-thumb' ) ) ; ?>
+								</div>
+								<div class="text-wrap">
+									<h2 class="post-title-grid"><?php echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["eat"][0]->post_title ), 22); ?></h2>
+									<p class="cat">Eat</p>
+								</div>
+							</a>
+							<p class="excerpt"><?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["eat"][0]->post_excerpt ); ?></p>
+						</div>
+
+						<div class="play quarter-col">
+							<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
+								<div class="image-wrap">
+									<?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-thumb' ) ) ; ?>
+								</div>
+								<div class="text-wrap">
+									<h2 class="post-title-grid"><?php echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["play"][0]->post_title ), 22); ?></h2>
+									<p class="cat">Play</p>
+								</div>
+							</a>
+							<p class="excerpt"> <?php  echo apply_filters( 'the_excerpt', $whatisthis[0]["play"][0]->post_excerpt ); ?></p>
+						</div>
+					<?php endwhile; ?>
+				</div>
+			</div>
+
+	</div><!-- .waypoints -->
 
 
-	
+
 	<script type="text/javascript">
 		var canIclick = false;
 		/*                 *
@@ -378,7 +418,7 @@
  			},
  			offset: '50%'
 		});
-		
+
 		var waypoint = new Waypoint({
   			element: document.getElementById('oahu'),
   			handler: function(direction) {
@@ -395,17 +435,17 @@
   			if(direction == 'down'){
   			if(!isOpen){
     			jQuery('.island-menu-title').html("MAUI")
- 			}}},		
+ 			}}},
  			offset: '50%'
 		});
-		
+
 		var waypoint = new Waypoint({
   			element: document.getElementById('maui'),
   			handler: function(direction) {
   			if(direction == 'up'){
   			if(!isOpen){
     			jQuery('.island-menu-title').html("OAHU")
- 			}}},		
+ 			}}},
  			offset: '80%'
 		});
 
@@ -418,8 +458,8 @@
  			}}},
  			offset: '50%'
 		});
-		
-		
+
+
 		var waypoint = new Waypoint({
   			element: document.getElementById('kauai'),
   			handler: function(direction) {
@@ -439,7 +479,7 @@
  			}}},
  			offset: '50%'
 		});
-		
+
 		var waypoint = new Waypoint({
   			element: document.getElementById('big-island'),
   			handler: function(direction) {
