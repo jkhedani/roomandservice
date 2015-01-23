@@ -1071,6 +1071,15 @@ body.single main {
     left: 0;
 }
 
+body.home .slide-data {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+body.home .slide-data .slide-title.flexslider-hg-title {
+  text-decoration: none !important;
+}
+
 .featured-articles {
     /*padding: 3.6rem 0 6.5rem;
     border-bottom: 1px solid #000;*/

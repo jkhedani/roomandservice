@@ -37,7 +37,7 @@
 					<div class="logo">
 						<a href="<?php echo home_url(); ?>">
 							<!-- svg available do later -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/pasted svg 472x65_poster_.png" alt="Room and Service Logo" class="logo-img">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/rm-logo.jpg" alt="Room and Service Logo" class="logo-img">
 						</a>
 					</div>
 					<!-- /logo -->
