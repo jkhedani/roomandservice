@@ -100,7 +100,7 @@ function html5blank_nav()
 function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-            
+
             // Conditionizr
             wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0');
 
@@ -205,6 +205,14 @@ function remove_width_attribute( $html ) {
    return $html;
 }
 
+// Truncate content based on character count
+function limit_character_count( $text, $maxchar ) {
+  if ( strlen( $text ) >= $maxchar ) {
+    return substr( $text, 0, $maxchar ) . "...";
+  } else {
+    return $text;
+  }
+}
 
 // If Dynamic Sidebar Exists
 if (function_exists('register_sidebar'))
