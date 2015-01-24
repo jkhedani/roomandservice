@@ -41,11 +41,16 @@
 			</a>
 			<p class="featured-articles-cat">
 				<?php
-					$catz = get_the_category( $pagepost->ID );
-					foreach ($catz as $post_cat){
-						echo($post_cat->name);
-						break;
-					};
+					if ( get_field('primary_category', $pagepost->ID) ) {
+						$primaryCat = get_field('primary_category', $pagepost->ID);
+						echo $primaryCat->name;
+					} else {
+						$catz = get_the_category( $pagepost->ID );
+						foreach ($catz as $post_cat){
+							echo($post_cat->name);
+							break;
+						};
+					}
 				?>
 			</p>
 			<a href="<?php echo get_permalink( $pagepost->ID ); ?>">
