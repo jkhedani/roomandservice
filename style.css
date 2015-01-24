@@ -1760,6 +1760,18 @@ body.single-hotel .flexslider {
   margin-bottom: 0px !important;
 }
 
+.book-now {
+  display: block;
+  float: right;
+  padding: 9px 27px;
+  background: rgb(41, 171, 226);
+  color: #FFF;
+  text-transform: uppercase;
+  border-radius: 7px;
+  box-shadow: 1px 1px 5px #ABABAB;
+  font-size: 14px;
+}
+
 /**
  * Post: Single
  */

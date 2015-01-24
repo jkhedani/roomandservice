@@ -15,8 +15,14 @@
 					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 				</h1>
 				<!-- /post title -->
-
-				<a class="book-now" href="#">Book Now</a>
+				<?php
+					if ( get_field('book_now_link') ) {
+						$bookNowLink = get_field('book_now_link');
+					} else {
+						$bookNowLink = '#';
+					}
+				?>
+				<a class="book-now" href="<?php echo $bookNowLink; ?>">Book Now</a>
 
 				<!-- slider -->
 				<div class="slider clear">

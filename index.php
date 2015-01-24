@@ -194,11 +194,16 @@
 				<a href="<?php echo get_permalink( $pagepost->ID ); ?>"><?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'grid-thumb' ) ) ; ?></a>
 				<p class="editorial-cat">
 					<?php
+					if ( get_field('primary_category', $pagepost->ID) ) {
+						$primaryCat = get_field('primary_category', $pagepost->ID);
+						echo $primaryCat->name;
+					} else {
 						$catz = get_the_category( $pagepost->ID );
 						foreach ($catz as $post_cat){
 							echo($post_cat->name);
 							break;
 						};
+					}
 					?>
 				</p>
 				<h2 class="editorial-title">
