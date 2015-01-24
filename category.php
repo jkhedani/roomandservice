@@ -183,8 +183,7 @@
 								<a href="<?php echo get_permalink( $pagepost->ID ); ?>">
 								    <?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'grid-thumb' ) ) ; ?>
 								</a>
-								asd
-								<p class="excerpt"><?php  echo limit_character_count( apply_filters( 'get_the_excerpt', $pagepost->post_excerpt ), 120); ?></p>
+								<p class="excerpt"><?php  echo apply_filters( 'the_excerpt', $pagepost->post_excerpt ); ?></p>
 								<a class="editorial-more" href="<?php echo get_the_permalink(); ?>">+ Read More</a>
 						<?php }?> </div><?php } ?>
 
