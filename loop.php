@@ -42,7 +42,8 @@
 				<?php endif; ?>
 				<!-- /post thumbnail -->
 
-				<?php html5wp_excerpt('html5wp_index', 100); // Build your custom callback length in functions.php ?>
+				<?php echo limit_character_count( get_the_excerpt(), 120); ?>
+				<?php //html5wp_excerpt('html5wp_index', 100); // Build your custom callback length in functions.php ?>
 
 				<a class="editorial-more" href="<?php echo get_the_permalink(); ?>">+ Read More</a>
 

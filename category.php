@@ -74,12 +74,29 @@
 
 			<!-- slider -->
 			<?php
-					$testz = single_cat_title("", false);
-					$testz = strtolower($testz);
-					$onthis = $testz;
-					$testz = "acf_slider_".$testz;
-					$whatisthis = get_field($testz , 'option');
+					if ( ! is_category('hotel') ) {
+						$testz = single_cat_title("", false);
+						$testz = strtolower($testz);
+						$onthis = $testz;
+						$testz = "acf_slider_".$testz;
+						$whatisthis = get_field($testz , 'option');
+					}
+
+					if ( is_category('hotel') ) {
+						$categories = get_the_category();
+						if($categories){
+							foreach($categories as $category) {
+								if ( $category->name !== "Hotel" ) {
+									$testz = strtolower($category->name);
+									$testz = str_replace(' ', '', $testz);
+									$testz = "hotel_".$testz."_slider";
+									$whatisthis = get_field($testz , 'option');
+								}
+							}
+						}
+					}
 			?>
+
 			<div class="slider">
 			<?php
 				if(function_exists('show_flexslider_rotator') && $whatisthis) echo show_flexslider_rotator($whatisthis);
@@ -166,7 +183,8 @@
 								<a href="<?php echo get_permalink( $pagepost->ID ); ?>">
 								    <?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'grid-thumb' ) ) ; ?>
 								</a>
-								<p class="excerpt"><?php  echo apply_filters( 'the_excerpt', $pagepost->post_excerpt ); ?></p>
+								asd
+								<p class="excerpt"><?php  echo limit_character_count( apply_filters( 'get_the_excerpt', $pagepost->post_excerpt ), 120); ?></p>
 								<a class="editorial-more" href="<?php echo get_the_permalink(); ?>">+ Read More</a>
 						<?php }?> </div><?php } ?>
 

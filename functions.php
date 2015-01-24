@@ -72,6 +72,11 @@ if (function_exists('add_theme_support'))
     Functions
 \*------------------------------------*/
 
+function custom_excerpt_length( $length ) {
+  return 100;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 // HTML5 Blank navigation
 function html5blank_nav()
 {

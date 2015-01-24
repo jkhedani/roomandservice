@@ -3,11 +3,11 @@
 	<script src="<?php echo get_bloginfo('template_url'); ?>/js/noframework.waypoints.js"></script>
 
 	<script type="text/javascript">
-		jQuery(document).scroll(function() {
-			var muchScrollWow = ((jQuery(document).scrollTop() * (jQuery( window ).height()-314))/jQuery( document ).height());
-			jQuery('.island-menu-wrap').css("top", muchScrollWow+50);
-		});
-		jQuery('.island-menu-wrap').css('display','none');
+		// jQuery(document).scroll(function() {
+		// 	var muchScrollWow = ((jQuery(document).scrollTop() * (jQuery( window ).height()-314))/jQuery( document ).height());
+		// 	jQuery('.island-menu-wrap').css("top", muchScrollWow+50);
+		// });
+		// jQuery('.island-menu-wrap').css('display','none');
 
 	</script>
 
@@ -106,7 +106,9 @@
 				<?php
 				if(get_field('acf_maui_hotels', 'option')){
 					$whatisthis = get_field('acf_maui_hotels', 'option');
+					$i = 0;
 					foreach ($whatisthis as $pagepost){
+						if ($i < 3) {
 				?>
 				<li>
 				    <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link">
@@ -114,6 +116,8 @@
 				    </a>							<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
 				</li>
 				<?php
+				$i++;
+			}
 					}};
 				?>
 				</ul>
@@ -125,7 +129,9 @@
 				<?php
 				if(get_field('acf_kauai_hotels', 'option')){
 					$whatisthis = get_field('acf_kauai_hotels', 'option');
+					$i = 0;
 					foreach ($whatisthis as $pagepost){
+						if ($i < 3) {
 				?>
 				<li>
 				    <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link">
@@ -133,6 +139,8 @@
                     <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
                 </li>
 				<?php
+				$i++;
+			}
 					}};
 				?>
 				</ul>
@@ -144,7 +152,9 @@
 				<?php
 				if(get_field('acf_big_island_hotels', 'option')){
 					$whatisthis = get_field('acf_big_island_hotels', 'option');
+					$i = 0;
 					foreach ($whatisthis as $pagepost){
+						if ($i < 3) {
 				?>
 				<li>
 				    <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link">
@@ -152,6 +162,8 @@
                     <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
 				</li>
 				<?php
+				$i++;
+			}
 					}};
 				?>
 				</ul>
@@ -191,7 +203,7 @@
 					?>
 				</h2>
 				<p class="editorial-excerpt">
-					<?php echo limit_character_count( the_excerpt(), 130 ); ?>
+					<?php echo limit_character_count( get_the_excerpt($pagepost->ID), 120 ); ?>
 				</p>
 				<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="editorial-more">+ Read More...</a>
 			</div>
@@ -423,7 +435,8 @@
   			element: document.getElementById('oahu'),
   			handler: function(direction) {
   				if(direction == 'up'){
-  					jQuery('.island-menu-wrap').css('display','none');
+						jQuery('.island-menu-title').html("Island Guide +");
+  					//jQuery('.island-menu-wrap').css('display','none');
 				}
  			},
  			offset: '80%'

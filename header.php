@@ -62,7 +62,7 @@
 		jQuery('#menu-sidebar-scrolling-menu').wrap('<div class="island-menu-wrap"></div>');
 		jQuery('#menu-sidebar-scrolling-menu .menu-item-has-children').wrap('<div class="child-island-menu-wrap"></div>');
 		jQuery('#menu-sidebar-scrolling-menu .sub-menu').wrap('<div class="sub-island-menu-wrap"></div>');
-		jQuery('.island-menu-wrap').prepend('<div class="island-menu-title">Island Guide</div>');
+		jQuery('.island-menu-wrap').prepend('<div class="island-menu-title">Island Guide +</div>');
 		jQuery(".child-island-menu-wrap:first-child").addClass("open-list");
 		jQuery('.child-island-menu-wrap .sub-island-menu-wrap').css("display", "none");
 		jQuery('.child-island-menu-wrap.open-list .sub-island-menu-wrap').css("display", "block");
@@ -79,7 +79,7 @@
 			if(!isOpen){
 				jQuery('#menu-sidebar-scrolling-menu li').css("display", "block");
 				isOpen = true;
-				jQuery('.island-menu-title').html("Island Guide");
+				jQuery('.island-menu-title').html("Island Guide +");
 			}else{
 				//jQuery('.island-menu-title').html("Island Guide");
 				jQuery('#menu-sidebar-scrolling-menu li').css("display", "none");

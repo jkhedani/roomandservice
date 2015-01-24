@@ -387,6 +387,25 @@ h2 {
   margin: 5px 0 0;
   text-transform: uppercase;
   font-size: 12px;
+  text-decoration: underline;
+  position: relative;
+}
+.quarter-col p.cat:after, .half-col p.cat:after {
+  content: "+";
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  line-height: 1.0;
+  border-radius: 10px;
+  background-color: #29ABE2;
+  position: absolute;
+  right: 12px;
+  top: 0;
+  color: #FFF;
+  font-size: 21px;
+  font-weight: 200;
+  font-family: "source-sans-pro", sans-serif;
 }
 .quarter-col h2, .half-col h2 {
   margin: 0;
@@ -695,6 +714,11 @@ body.single main {
   background-color: #fff;
 }
 
+body.category-hotel main,
+body.category-shop main {
+  background: none;
+}
+
 #content {
     padding: 45px 0
 }
@@ -808,6 +832,13 @@ header.header {
     margin-top: -3px;
     color: #fff;
     background-color: rgba( 00, 00 ,00, 0.8);
+
+    /*TRANSITION*/
+    -webkit-transition: margin 0.5s ease;
+    -moz-transition: margin 0.5s ease;
+    -o-transition: margin 0.5s ease;
+    -ms-transition: margin 0.5s ease;
+    transition: margin 0.5s ease;
 }
 
 #menu-sidebar-scrolling-menu a {
@@ -881,23 +912,21 @@ header.header {
   border-color: transparent transparent transparent rgba(00,00,00,0.8);
 }
 
-.page .island-menu-wrap,.category .island-menu-wrap,.archive .island-menu-wrap,.single-hotel .island-menu-wrap, .single-post .island-menu-wrap, .search .island-menu-wrap {
-    top: 50%
+.home .island-menu-wrap, .page .island-menu-wrap,.category .island-menu-wrap,.archive .island-menu-wrap,.single-hotel .island-menu-wrap, .single-post .island-menu-wrap, .search .island-menu-wrap {
+    top: 315px;
 }
 
 .island-filter {
     float: right;
-    margin-top: 1.2rem;
 }
 
 .island-filter h3.dropdown {
     font-family: 'source-sans-pro', sans-serif;
     margin: 0;
     font-size: 1.2rem;
-    /*width: 230px;*/
     height: 29px;
     background: #ccc;
-    line-height: 3.2rem;
+    line-height: 2.8rem;
     color: #fff;
     padding-left: 1.4rem
 }
@@ -1099,12 +1128,14 @@ header.header {
     left: 0;
 }
 
-body.home .slide-data {
+body.home .slide-data,
+body.category .slide-data {
     color: #FFF;
     text-decoration: underline;
 }
 
-body.home .slide-data .slide-title.flexslider-hg-title {
+body.home .slide-data .slide-title.flexslider-hg-title,
+body.category .slide-data .slide-title.flexslider-hg-title {
   text-decoration: none !important;
 }
 
@@ -1307,7 +1338,7 @@ body.single-post .social-share {
 .single-hotel main {
     background-color: #ededed;
     padding: 0;
-    margin: 3.4rem auto 13.5rem
+    /*margin: 3.4rem auto 13.5rem*/
 }
 
 .hotel-header {
@@ -1324,17 +1355,18 @@ body.single-post .social-share {
 }
 
 .hotel-info {
-    float: right;
-    margin-top: 1.6rem;
+    margin-top: 2.2rem;
     font-size: 1.3rem;
     line-height: 1
 }
 
 .hotel-info-website a {
+  font-size: 18px;
     text-decoration: underline
 }
 
 .hotel-info-phone {
+  font-size: 18px;
     margin-left: .5rem
 }
 
@@ -1379,6 +1411,8 @@ body.single-post .social-share {
     padding: 3.6rem 5rem;
     display: none;
     background: #FFF;
+    min-height: 517px;
+    max-height: 517px;
 }
 
 .tab-content p {
@@ -1485,6 +1519,7 @@ body.single-post .social-share {
 .social-share {
     height: 96px;
     margin-top: 3rem;
+    margin-bottom: 110px;
     background-color: #fff;
     padding: 2.7rem 3rem
 }
@@ -1549,7 +1584,7 @@ body.single-post .social-share {
 }
 
 .type-hotel h2 {
-    height: 70px
+    /*height: 70px*/
 }
 
 #infscr-loading {
@@ -1679,9 +1714,9 @@ body.single-post .social-share {
   height: auto;
 }
 body.category .page-cat-title {
-  font-size: 2.5em;
+  font-size: 30px;
   color: #0E0E0E;
-  margin: 15px 0 40px;
+  margin: 2px 0 23px;
 }
 body.category .excerpt {
   margin-top: 0;
@@ -1689,9 +1724,27 @@ body.category .excerpt {
 body.category .editorial-more {
   padding: 0;
 }
+body.category .island-filter h3.dropdown {
+  width: 230px;
+}
+
+body.category .island-filter .island-filter-list {
+  width: 202px;
+}
 
 /**
- * Hotel: Single
+ * Single: Post
+ */
+body.single-post main {
+  margin: 30px auto 0;
+}
+
+body.single-post .slider-bgcolor {
+  margin: 111px auto 0;
+}
+
+/**
+ * Single: Hotels
  */
 body.single-hotel main {
   background: none;
@@ -1713,6 +1766,42 @@ body.single-hotel .flexslider {
 body.single-post p.post-cat a {
   text-decoration: underline;
 }
+
+body.single-post .flex-control-nav {
+  display: none;
+}
+
+/**
+ * Hotel & Shop Styling
+ */
+ body.category-hotel main,
+ body.category-shop main {
+   margin: 110px auto 0;
+   padding-left: 0;
+   padding-right: 0;
+ }
+
+ body.category-hotel .flexslider,
+ body.category-shop .flexslider {
+    left:0;
+    margin: 0 !important;
+ }
+
+ body.category-hotel .page-cat-title,
+ body.category-shop .page-cat-title {
+   text-align: center;
+   float: none;
+   font-size: 18px;
+   text-transform: uppercase;
+   margin-bottom: 25px;
+ }
+
+ body.category-hotel #content,
+ body.category-shop #content {
+   background: #FFF;
+   padding-left: 3rem;
+   padding-right: 3rem;
+ }
 
 /**
  * Deviant Slider Styles

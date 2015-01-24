@@ -14,16 +14,9 @@
 				<h1 class="hotel-name post-title">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 				</h1>
-
-				<div id="hotel-info" class="hotel-info">
-					<span id="info-url" class="hotel-info-website">
-						<a href="<?php echo get_post_meta($post->ID, "_url", true); ?>"><?php echo get_post_meta($post->ID, "_url", true); ?></a>
-					</span>
-					<span id="info-phone" class="hotel-info-phone">
-						<?php echo get_post_meta($post->ID, "_phone", true); ?>
-					</span>
-				</div>
 				<!-- /post title -->
+
+				<a class="book-now" href="#">Book Now</a>
 
 				<!-- slider -->
 				<div class="slider clear">
@@ -48,16 +41,29 @@
 						<?php echo wpautop(get_post_meta($post->ID, "_about", true)); ?>
 						<?php
                 		$categories = get_the_category();
+										$hide = true;
+										if ( !$hide ) {
                 		if($categories[0]->name == "Hotel"){
                 		?>
-                			<a href="http://www.roomandservice.com/category/hotel+<?php echo($categories[1]->slug); ?>/" class="return-hotel"> View <?php echo($categories[1]->name); ?> Hotels</a>	
+                			<a href="http://www.roomandservice.com/category/hotel+<?php echo($categories[1]->slug); ?>/" class="return-hotel"> View <?php echo($categories[1]->name); ?> Hotels</a>
                 		<?php
                 		}else{
                 		?>
-                			<a href="http://www.roomandservice.com/category/hotel+<?php echo($categories[0]->slug); ?>/" class="return-hotel"> View <?php echo($categories[0]->name); ?> Hotels</a>			
+                			<a href="http://www.roomandservice.com/category/hotel+<?php echo($categories[0]->slug); ?>/" class="return-hotel"> View <?php echo($categories[0]->name); ?> Hotels</a>
                 		<?php
                 		}
-                		?>
+									}
+            ?>
+
+					<div id="hotel-info" class="hotel-info">
+						<span id="info-url" class="hotel-info-website">
+							<a href="<?php echo get_post_meta($post->ID, "_url", true); ?>"><?php echo get_post_meta($post->ID, "_url", true); ?></a>
+						</span>
+						<span id="info-phone" class="hotel-info-phone">
+							<?php echo get_post_meta($post->ID, "_phone", true); ?>
+						</span>
+					</div>
+
 				</div>
 				<div id="tab-2" class="tab-content">
 					<?php echo wpautop(get_post_meta($post->ID, "_why", true)); ?>
@@ -70,7 +76,7 @@
 			</section>
 		</article>
 		<!-- /article -->
-		
+
 
 	<?php endwhile; ?>
 

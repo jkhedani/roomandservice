@@ -62,7 +62,7 @@
 	</section>
 
 	<aside class="hotel-list-large">
-		<h2>Where to Stay</h2>
+		<h3 class="hotel_selector_title">Where to Stay</h3>
 		<?php
 
 		$posts = get_field('where_to_stay');
@@ -81,7 +81,7 @@
 				<h3 class="hotel-listing-title">
 					<a href="<?php the_permalink(); ?>"><?php echo limit_character_count(get_the_title(), 22); ?></a>
 				</h3>
-				<?php the_excerpt(); ?>
+				<?php echo limit_character_count( get_the_excerpt(), 100); ?>
 			</div>
 	<?php endforeach; ?>
 	<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
