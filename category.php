@@ -34,28 +34,6 @@
 
 			</h1>
 
-			<script type="text/javascript">
-				function filterIsland(island) {
-
- 					var temp = document.URL.split("/");
-
-					var cat = temp[temp.length-2];
-					cat = cat.split("+");
-					cat = cat[0];
-
-					var newUrl =  "<?php echo get_site_url(); ?>/category/"  + cat + "+" + island + "/";
-
-					var jQueryContent = jQuery('#content');
-
-					jQuery(jQueryContent.html(""));
-					if( history.pushState){
-         				 history.pushState('', document.title,newUrl);
-        			}
-					jQuery('#content').infinitescroll('filterIsland',newUrl);
-
-				};
-
-			</script>
 			<style>
 				.pagination{ display: none;}
 			</style>
@@ -63,7 +41,7 @@
 			<?php if ( is_category( 'culture' ) || is_category( 'style' ) || is_category( 'food' ) || is_category('arts') ) : ?>
 			<div class="island-filter">
 				<h3 class="island-filter-button dropdown">Filter by Island</h3>
-				<ul class="island-filter-menu island-filter-list close">
+				<ul class="island-filter-menu island-filter-list">
 					<li><a href="" onclick="filterIsland('kauai')">Kauai</a></li>
 					<li><a href="" onclick="filterIsland('maui')">Maui</a></li>
 					<li><a href="" onclick="filterIsland('oahu')">Oahu</a></li>
@@ -124,56 +102,12 @@
 				</section>
 			<?php endif; ?>
 
-				<div id="content" class="clear three-col-wrap">
+				<div id="content" class="clear">
 
-				<!-- hotel listing for select categoru -->
-				<?php $shown = false; if ( $shown === true ) : ?>
-				<?php if(is_category( 'eat' ) || is_category( 'shop' ) || is_category( 'play' )) :
-
-						$strz = curPageURL();
-							$strz = (explode("/",$strz));
-
-							$dim = sizeof($strz);
-							$strz = $strz[$dim-2];
-							$strz = (explode("+",$strz));
-
-							$dim = sizeof($strz);
-							if($dim>1){
-								$strz = $strz[1];
-							}?>
-					<div class="three-col-rtl" style="display:none;">
-						<div class="hotel-list-small">
-							<h2 class="hotel-list-small-title">Hotels on <?php echo ucfirst($strz); ?></h2>
-							<ul class="hotel-list-small-list">
-							<?php
-
-							if(get_field('acf_'.$strz.'_hotels', 'option')&&($dim>1)){
-								$whatisthis = get_field('acf_'.$strz.'_hotels', 'option');
-								$count = 0;
-								foreach ($whatisthis as $pagepost){
-							?>
-								<li>
-									<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link">
-									<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'small-hotel-thumb' ) ) ; ?></a>
-									<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?></span></a>
-								</li>
-							<?php
-									$count++;
-									if($count >=3){break;}
-								}
-							?>
-							</ul>
-								<a href="<?php echo get_bloginfo('url'); ?>/category/hotel+<?php echo $strz; ?>/" class="hotel-filter-all">VIEW ALL</a>
-							<?php
-							};
-							?>
-						</div>
-					</div>
-				<?php endif; ?>
-				<?php endif; ?>
-
+					<?php $shown = false; if ( $shown ) : ?>
 					<?php if(get_field('acf_'.$onthis.'_sponsor', 'option')){ ?>
-						<div class="three-col"><?php
+
+						<?php
 							$whatisthis = get_field('acf_'.$onthis.'_sponsor', 'option');
 							foreach ($whatisthis as $pagepost){
 						?>
@@ -185,8 +119,10 @@
 								</a>
 								<p class="excerpt"><?php  echo apply_filters( 'the_excerpt', $pagepost->post_excerpt ); ?></p>
 								<a class="editorial-more" href="<?php echo get_the_permalink(); ?>">+ Read More</a>
-						<?php }?> </div><?php } ?>
+						<?php }?>
 
+						<?php } ?>
+					<?php endif; ?>
 
 				<?php get_template_part('loop'); ?>
 

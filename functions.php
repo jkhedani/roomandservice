@@ -6,6 +6,11 @@
  */
 
 require_once "modules/is-debug.php";
+require_once( 'lib/jquery-ajaxPosts/jquery.ajaxPosts.php' );
+function add_to_init() {
+
+}
+add_action('init', 'add_to_init');
 
 /*------------------------------------*\
     External Modules/Files
@@ -101,6 +106,20 @@ function html5blank_nav()
       )
     );
 }
+
+function roomandservice_enqueue_scripts() {
+  $stylesheet_dir = get_stylesheet_directory_uri();
+  $protocol='http:'; // discover the correct protocol to use
+  if(!empty($_SERVER['HTTPS'])) $protocol='https:';
+
+  // jQuery AJAX Posts
+  wp_enqueue_script( 'jquery-ajax-posts', "$stylesheet_dir/lib/jquery-ajaxPosts/jquery.ajaxPosts.js", array('jquery') );
+  wp_localize_script('jquery-ajax-posts', 'jquery_ajax_posts', array(
+    'ajaxurl' => admin_url('admin-ajax.php',$protocol),
+    'nonce' => wp_create_nonce('jquery_ajax_posts_nonce')
+  ));
+}
+add_action( 'wp_enqueue_scripts', 'roomandservice_enqueue_scripts' );
 
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts()

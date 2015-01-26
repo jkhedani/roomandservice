@@ -77,7 +77,7 @@
 			<div class="hotel_selector  island-filter">
 				<h3 class="hotel_selector_title">Where To Stay</h3>
 				<h3 class="island-filter-button dropdown" val="oahu">Oahu Hotels</h3>
-				<ul class="select_click island-filter-menu close">
+				<ul class="island-filter-list island-filter-menu">
 					<li val="oahu">Oahu Hotels</li>
 					<li val="maui">Maui Hotels</li>
 					<li val="kauai">Kauai Hotels</li>

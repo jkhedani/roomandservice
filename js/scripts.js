@@ -18,7 +18,8 @@
 		});
 
 		$('.island-filter-button').on('click', function() {
-			$('.island-filter-menu.close').toggle();
+			$('.island-filter-menu.island-filter-list').toggleClass('fadeIn');
+			//$('.island-filter-menu.close').toggle();
 		});
 
 

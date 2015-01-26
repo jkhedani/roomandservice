@@ -77,12 +77,13 @@
 
 		jQuery(".island-menu-title").click(function() {
 			if(!isOpen){
-				jQuery('#menu-sidebar-scrolling-menu li').css("display", "block");
+				jQuery('body').find('.island-menu-wrap').addClass('expanded');
+				//jQuery('#menu-sidebar-scrolling-menu li').css("display", "block");
 				isOpen = true;
 				jQuery('.island-menu-title').html("Island Guide +");
 			}else{
-				//jQuery('.island-menu-title').html("Island Guide");
-				jQuery('#menu-sidebar-scrolling-menu li').css("display", "none");
+				jQuery('body').find('.island-menu-wrap').removeClass('expanded');
+				//jQuery('#menu-sidebar-scrolling-menu li').css("display", "none");
 				isOpen = false;
 			}
 		});
