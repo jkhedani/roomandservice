@@ -316,7 +316,7 @@ h2 {
 
 .three-col {
     float: left;
-    height: 390px;
+    max-height: 335px;
     margin-bottom: 50px;
     width: 265px;
     overflow: hidden
@@ -1040,9 +1040,18 @@ body.home .island-filter .island-filter-list,.island-filter .select_click {
   top: 56px !important;
 }
 
+.island-filter .island-filter-list {
+  padding: 0;
+}
+.island-filter .island-filter-list li:first-child {
+  padding-top: 1.2rem;
+}
 .island-filter .island-filter-list li,.island-filter .select_click li {
-    padding-bottom: 1.5rem;
+    /*padding-bottom: 1.5rem;*/
+    padding: 0 0 1.2rem 1.4rem;
     color: #FFF;
+    cursor: pointer;
+    display: block;
 }
 
 .island-filter .island-filter-list li a,.island-filter .select_click li a {
@@ -1098,7 +1107,6 @@ body.home .island-filter .island-filter-list,.island-filter .select_click {
   font-size: 30px;
   font-weight: 400;
   margin: 24px 0px -65px;
-  text-decoration: none;
   text-transform: none;
   height: 29px;
   overflow: hidden;
@@ -1204,13 +1212,13 @@ body.home .island-filter .island-filter-list,.island-filter .select_click {
     left: 0;
 }
 
-body.home .slide-data,
-body.category .slide-data {
-    color: #FFF;
-    text-decoration: underline;
+body.home div.slide-data,
+body.category div.slide-data {
+  color: #FFF;
+  text-decoration: underline;
 }
 
-body.home .slide-data .slide-title.flexslider-hg-title,
+body.home .slide-data h2.slide-title.flexslider-hg-title,
 body.category .slide-data .slide-title.flexslider-hg-title {
   text-decoration: none !important;
 }
@@ -1320,14 +1328,25 @@ body.home .editorial-cat {
 }
 
 .hotel_selector_title {
-    text-align: center;
-    font-size: 22px;
-    margin-top: 0;
-    color: #0E0E0E;
-    font-weight: 400;
-    text-decoration: underline;
+  text-align: center;
+  font-size: 22px;
+  margin-top: 0;
+  color: #0E0E0E;
+  font-weight: 400;
+  position: relative;
 }
-
+.hotel_selector_title:after {
+  content: "";
+  height: 1px;
+  width: 138px;
+  border-bottom: 1px solid #7E7E7E;
+  position: absolute;
+  bottom: -1px;
+  left: 57px;
+}
+body.single-post .hotel_selector_title:after {
+  left: 81px;
+}
 .oahu-border {
     padding-top: 2rem
 }
@@ -1528,18 +1547,18 @@ body.single-post .social-share {
 }
 
 .hotel-listing {
-    margin: 0 auto 48px;
+    margin: 5px auto 30px;
     width: 248px
 }
 
 .hotel-listing-title {
-  margin: 13px 0 10px;
+  margin: 13px 0 8px;
 }
 
 .hotel-listing-title a {
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 1.4rem;
+    font-size: 16px;
     color: #0E0E0E;
 }
 
@@ -1705,7 +1724,7 @@ body.single-post .social-share {
   font-size: 48px;
   font-weight: 300;
   font-family: "source-sans-pro", sans-serif;
-  padding-left: 15px;
+  /*padding-left: 15px;*/
 }
 
 .search-results .post-title-grid {
@@ -1815,10 +1834,14 @@ body.single-post .social-share {
  * Category pages
  */
 .post-title-grid {
+  margin-top: 0;
   height: auto;
 }
 .post-title-grid a {
   color: #0E0E0E;
+}
+body.category #content {
+  padding-top: 35px;
 }
 body.category .page-cat-title {
   font-size: 30px;
@@ -1826,7 +1849,7 @@ body.category .page-cat-title {
   margin: 2px 0 23px;
 }
 body.category .excerpt {
-  margin-top: 0;
+  /*margin-top: 0;*/
 }
 body.category .editorial-more {
   padding: 0;
@@ -1837,6 +1860,17 @@ body.category .island-filter h3.dropdown {
 
 body.category .island-filter .island-filter-list {
   width: 201px;
+}
+
+/**
+ * Single: Page
+ */
+body.page main {
+  background: #FFF;
+}
+body.page section h1 {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 300;
 }
 
 /**
@@ -1959,10 +1993,27 @@ body.single-post .slide-title {
   -webkit-transition: margin 2s ease;
   transition: margin 2s ease;
 }
-
 .ajax-visible {
   opacity: 1.0;
   visibility: visible;
+}
+button.jquery-ajax-get-posts {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  margin: 0 auto;
+  background: #FFF;
+  color: #29ABE2;
+  border: 1px solid #29ABE2;
+  font-size: 12px;
+  padding: 8px 90px;
+
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+button.jquery-ajax-get-posts:hover {
+  background: #29ABE2;
+  color: #FFF;
 }
 
 

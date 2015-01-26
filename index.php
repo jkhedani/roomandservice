@@ -83,101 +83,98 @@
 					<li val="kauai">Kauai Hotels</li>
 					<li val="big_island">Big Island Hotels</li>
 				</ul>
+
 				<div class="hotel_selector_oahu hide_me_ok">
 					<ul class="hotel-filter-list">
 					<?php
-					if(get_field('acf_oahu_hotels', 'option')){
-						$whatisthis = get_field('acf_oahu_hotels', 'option');
-						$i = 0;
-						foreach ($whatisthis as $pagepost){
-							if ($i < 3) {
+						if( get_field('acf_oahu_hotels', 'option') ) {
+							$whatisthis = get_field('acf_oahu_hotels', 'option');
+							$i = 0;
 					?>
-					<li>
-					  <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link">
-						<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'medium-hotel-thumb' ) ) ; ?></a>
-            <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
-					</li>
-				<?php
-					$i++;
-					}
-					}};
-					?>
+					<?php foreach ( $whatisthis as $pagepost ) { ?>
+					<?php	if ($i < 3) { ?>
+						<li>
+					  	<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link">
+								<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'medium-hotel-thumb' ) ) ; ?>
+							</a>
+            	<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
+						</li>
+					<?php $i++; ?>
+					<?php } ?>
+					<?php }}; ?>
 					</ul>
 					<a href="<?php echo get_bloginfo('url'); ?>/category/hotel+oahu/" class="hotel-filter-all" class="hotel-filter-all">VIEW ALL</a>
 				</div>
 
 				<div class="hotel_selector_maui hide_me_ok">
-                <ul class="hotel-filter-list">
-				<?php
-				if(get_field('acf_maui_hotels', 'option')){
-					$whatisthis = get_field('acf_maui_hotels', 'option');
-					$i = 0;
-					foreach ($whatisthis as $pagepost){
-						if ($i < 3) {
-				?>
-				<li>
-				    <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link">
-						<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'small-hotel-thumb' ) ) ; ?>
-				    </a>							<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
-				</li>
-				<?php
-				$i++;
-			}
-					}};
-				?>
-				</ul>
-				<a href="<?php echo get_bloginfo('url'); ?>/category/hotel+maui/" class="hotel-filter-all">VIEW ALL</a>
+					<ul class="hotel-filter-list">
+						<?php
+							if( get_field('acf_maui_hotels', 'option') ) {
+								$whatisthis = get_field('acf_maui_hotels', 'option');
+								$i = 0;
+						?>
+						<?php foreach ( $whatisthis as $pagepost ) { ?>
+						<?php	if ($i < 3) { ?>
+							<li>
+								<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link">
+									<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'medium-hotel-thumb' ) ) ; ?>
+								</a>
+								<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
+							</li>
+						<?php $i++; ?>
+						<?php } ?>
+						<?php }}; ?>
+					</ul>
+					<a href="<?php echo get_bloginfo('url'); ?>/category/hotel+maui/" class="hotel-filter-all" class="hotel-filter-all">VIEW ALL</a>
 				</div>
 
 				<div class="hotel_selector_kauai hide_me_ok">
-                <ul class="hotel-filter-list">
-				<?php
-				if(get_field('acf_kauai_hotels', 'option')){
-					$whatisthis = get_field('acf_kauai_hotels', 'option');
-					$i = 0;
-					foreach ($whatisthis as $pagepost){
-						if ($i < 3) {
-				?>
-				<li>
-				    <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link">
-						<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'small-hotel-thumb' ) ) ; ?></a>
-                    <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
-                </li>
-				<?php
-				$i++;
-			}
-					}};
-				?>
-				</ul>
-				<a href="<?php echo get_bloginfo('url'); ?>/category/hotel+kauai/" class="hotel-filter-all">VIEW ALL</a>
+					<ul class="hotel-filter-list">
+						<?php
+							if( get_field('acf_kauai_hotels', 'option') ) {
+								$whatisthis = get_field('acf_kauai_hotels', 'option');
+								$i = 0;
+						?>
+						<?php foreach ( $whatisthis as $pagepost ) { ?>
+						<?php	if ($i < 3) { ?>
+							<li>
+								<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link">
+									<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'medium-hotel-thumb' ) ) ; ?>
+								</a>
+								<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
+							</li>
+						<?php $i++; ?>
+						<?php } ?>
+						<?php }}; ?>
+					</ul>
+					<a href="<?php echo get_bloginfo('url'); ?>/category/hotel+kauai/" class="hotel-filter-all" class="hotel-filter-all">VIEW ALL</a>
 				</div>
 
 				<div class="hotel_selector_big_island hide_me_ok">
-                <ul class="hotel-filter-list">
-				<?php
-				if(get_field('acf_big_island_hotels', 'option')){
-					$whatisthis = get_field('acf_big_island_hotels', 'option');
-					$i = 0;
-					foreach ($whatisthis as $pagepost){
-						if ($i < 3) {
-				?>
-				<li>
-				    <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link">
-                    <?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'small-hotel-thumb' ) ) ; ?></a>
-                    <a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
-				</li>
-				<?php
-				$i++;
-			}
-					}};
-				?>
-				</ul>
-				<a href="<?php echo get_bloginfo('url'); ?>/category/hotel+big-island/" class="hotel-filter-all">VIEW ALL</a>
+					<ul class="hotel-filter-list">
+						<?php
+							if( get_field('acf_big_island_hotels', 'option') ) {
+								$whatisthis = get_field('acf_big_island_hotels', 'option');
+								$i = 0;
+						?>
+						<?php foreach ( $whatisthis as $pagepost ) { ?>
+						<?php	if ($i < 3) { ?>
+							<li>
+								<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link">
+									<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'medium-hotel-thumb' ) ) ; ?>
+								</a>
+								<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="hotel-img-link-title"><span><?php  echo apply_filters( 'the_title', $pagepost->post_title ); ?>	</span></a>
+							</li>
+						<?php $i++; ?>
+						<?php } ?>
+						<?php }}; ?>
+					</ul>
+					<a href="<?php echo get_bloginfo('url'); ?>/category/hotel+big-island/" class="hotel-filter-all" class="hotel-filter-all">VIEW ALL</a>
 				</div>
 
 			</div>
 			<script type="text/javascript">
-			jQuery(".select_click li").click(function() {
+			jQuery(".island-filter-list li").click(function() {
 				var value = jQuery(this).attr("val");
 				var namez = jQuery(this).html();
 				hideHotels(value,namez);
@@ -190,6 +187,7 @@
 				$whatisthis = get_field('acf_editorials', 'option');
 				foreach ($whatisthis as $pagepost){
 			?>
+
 			<div class="editorial-article">
 				<a href="<?php echo get_permalink( $pagepost->ID ); ?>"><?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'grid-thumb' ) ) ; ?></a>
 				<p class="editorial-cat">
