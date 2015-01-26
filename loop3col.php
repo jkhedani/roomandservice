@@ -29,7 +29,8 @@
 			<!-- /post thumbnail -->
 
 			<?php //html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
-			<p class="excerpt"><?php  echo limit_character_count( get_the_excerpt(), 100); ?></p>
+			<?php $excerpt = apply_filters('the_excerpt', get_post_field('post_excerpt', $query->post->ID)); ?>
+			<p class="excerpt"><?php  echo limit_character_count( $excerpt, 100); ?></p>
 
 			<a class="editorial-more" href="<?php the_permalink(); ?>">+ Read More</a>
 
@@ -71,7 +72,8 @@
 		<!-- /post thumbnail -->
 
 		<?php //html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
-		<p class="excerpt"><?php  echo limit_character_count( get_the_excerpt(), 100); ?></p>
+		<?php $excerpt = apply_filters('the_excerpt', get_post_field('post_excerpt', $query->post->ID)); ?>
+		<p class="excerpt"><?php  echo limit_character_count( $excerpt, 100); ?></p>
 
 		<a class="editorial-more" href="<?php the_permalink(); ?>">+ Read More</a>
 

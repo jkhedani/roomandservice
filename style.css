@@ -1212,15 +1212,17 @@ body.home .island-filter .island-filter-list,.island-filter .select_click {
     left: 0;
 }
 
-body.home div.slide-data,
-body.category div.slide-data {
+body.home .slide-data span,
+body.category .slide-data span {
   color: #FFF;
   text-decoration: underline;
+  margin-top: -11px;
+  display: block;
 }
 
 body.home .slide-data h2.slide-title.flexslider-hg-title,
-body.category .slide-data .slide-title.flexslider-hg-title {
-  text-decoration: none !important;
+body.category .slide-data h2.slide-title.flexslider-hg-title {
+    margin: 0 0 -65px;
 }
 
 .featured-articles {

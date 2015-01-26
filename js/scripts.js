@@ -62,4 +62,13 @@ jQuery(document).ready(function( $ ) {
 		}
 	});
 
+	// Sliders on category and home: wrap in span
+	if ( $('body').hasClass('home') || $('body').hasClass('category') ) {
+		$('body').find('.slide-data').each( function() {
+			var title = $(this).find('h2.slide-title').detach();
+			$(this).wrapInner("<span></span>");
+			$(this).append(title);
+		});
+	}
+
 });

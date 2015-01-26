@@ -211,7 +211,8 @@
 					?>
 				</h2>
 				<p class="editorial-excerpt">
-					<?php echo limit_character_count( get_the_excerpt($pagepost->ID), 120 ); ?>
+					<?php $excerpt = apply_filters( 'the_excerpt', $pagepost->post_excerpt ); ?>
+					<?php echo limit_character_count( $excerpt, 115 ); ?>
 				</p>
 				<a href="<?php echo get_permalink( $pagepost->ID ); ?>" class="editorial-more">+ Read More...</a>
 			</div>
