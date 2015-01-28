@@ -724,14 +724,20 @@ body.category-shop main {
 }
 
 .translate-up {
-  transition: transform 500ms;
-  -webkit-transition: transform 500ms;
+  transition: transform .5s ease;
+  -webkit-transition: -webkit-transform .5s ease;
+
+  -ms-transform: translateX(0px) translateY(-111px);
+  -webkit-transform: translateX(0px) translateY(-111px);
   transform: translateX(0px) translateY(-111px);
 }
 
 .translate-down {
-  transition: transform 500ms;
-  -webkit-transition: transform 500ms;
+  transition: transform 500ms ease;
+  -webkit-transition: -webkit-transform 500ms ease;
+
+  -ms-transform: translateX(0px) translateY(0px);
+  -webkit-transform: translateX(0px) translateY(0px);
   transform: translateX(0px) translateY(0px);
 }
 

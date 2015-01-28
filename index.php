@@ -233,7 +233,7 @@
 					<div class="shop half-col">
 						<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
 							<div class="image-wrap">
-								<?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-thumb' ) ) ; ?>
+								<?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-half' ) ) ; ?>
 							</div>
 							<div class="text-wrap">
 								<h2 class="post-title-grid"><?php echo apply_filters( 'the_title', $whatisthis[0]["shop"][0]->post_title ); ?></h2>
@@ -246,7 +246,7 @@
 					<div class="eat quarter-col">
 						<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
 							<div class="image-wrap">
-								<?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-thumb' ) ) ; ?>
+								<?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-quarter' ) ) ; ?>
 							</div>
 							<div class="text-wrap">
 								<h2 class="post-title-grid"><?php echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["eat"][0]->post_title ), 22); ?></h2>
@@ -259,7 +259,7 @@
 					<div class="play quarter-col">
 						<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
 							<div class="image-wrap">
-								<?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-thumb' ) ) ; ?>
+								<?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-quarter' ) ) ; ?>
 							</div>
 							<div class="text-wrap">
 								<h2 class="post-title-grid"><?php echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["play"][0]->post_title ), 22); ?></h2>
@@ -282,7 +282,7 @@
 					<div class="shop quarter-col">
 						<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
 							<div class="image-wrap">
-								<?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-thumb' ) ) ; ?>
+								<?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-quarter' ) ) ; ?>
 							</div>
 							<div class="text-wrap">
 								<h2 class="post-title-grid"><?php  echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["shop"][0]->post_title ), 22); ?></h2>
@@ -295,7 +295,7 @@
 					<div class="eat quarter-col">
 						<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
 							<div class="image-wrap">
-								<?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-thumb' ) ) ; ?>
+								<?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-quarter' ) ) ; ?>
 							</div>
 							<div class="text-wrap">
 								<h2 class="post-title-grid"><?php echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["eat"][0]->post_title ), 22); ?></h2>
@@ -308,7 +308,7 @@
 					<div class="play half-col">
 						<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
 							<div class="image-wrap">
-								<?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-thumb' ) ) ; ?>
+								<?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-half' ) ) ; ?>
 							</div>
 							<div class="text-wrap">
 								<h2 class="post-title-grid"><?php echo apply_filters( 'the_title', $whatisthis[0]["play"][0]->post_title ); ?></h2>
@@ -330,7 +330,7 @@
 						<div class="shop quarter-col">
 							<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
 								<div class="image-wrap">
-									<?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-thumb' ) ) ; ?>
+									<?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-quarter' ) ) ; ?>
 								</div>
 								<div class="text-wrap">
 									<h2 class="post-title-grid"><?php  echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["shop"][0]->post_title ), 22); ?></h2>
@@ -343,7 +343,7 @@
 						<div class="eat half-col">
 							<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
 								<div class="image-wrap">
-									<?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-thumb' ) ) ; ?>
+									<?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-half' ) ) ; ?>
 								</div>
 								<div class="text-wrap">
 									<h2 class="post-title-grid"><?php echo apply_filters( 'the_title', $whatisthis[0]["eat"][0]->post_title ); ?></h2>
@@ -356,7 +356,7 @@
 						<div class="play quarter-col">
 							<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
 								<div class="image-wrap">
-									<?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-thumb' ) ) ; ?>
+									<?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-quarter' ) ) ; ?>
 								</div>
 								<div class="text-wrap">
 									<h2 class="post-title-grid"><?php echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["play"][0]->post_title ), 22); ?></h2>
@@ -377,7 +377,7 @@
 						<div class="shop half-col">
 							<a href="<?php echo get_permalink( $whatisthis[0]["shop"][0]->ID ); ?>" >
 								<div class="image-wrap">
-									<?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-thumb' ) ) ; ?>
+									<?php  if( has_post_thumbnail( $whatisthis[0]["shop"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["shop"][0]->ID, 'grid-half' ) ) ; ?>
 								</div>
 								<div class="text-wrap">
 									<h2 class="post-title-grid"><?php  echo apply_filters( 'the_title', $whatisthis[0]["shop"][0]->post_title ); ?></h2>
@@ -390,7 +390,7 @@
 						<div class="eat quarter-col">
 							<a href="<?php echo get_permalink( $whatisthis[0]["eat"][0]->ID ); ?>" >
 								<div class="image-wrap">
-									<?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-thumb' ) ) ; ?>
+									<?php  if( has_post_thumbnail( $whatisthis[0]["eat"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["eat"][0]->ID, 'grid-quarter' ) ) ; ?>
 								</div>
 								<div class="text-wrap">
 									<h2 class="post-title-grid"><?php echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["eat"][0]->post_title ), 22); ?></h2>
@@ -403,7 +403,7 @@
 						<div class="play quarter-col">
 							<a href="<?php echo get_permalink( $whatisthis[0]["play"][0]->ID ); ?>" >
 								<div class="image-wrap">
-									<?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-thumb' ) ) ; ?>
+									<?php  if( has_post_thumbnail( $whatisthis[0]["play"][0]->ID) )  echo(get_the_post_thumbnail( $whatisthis[0]["play"][0]->ID, 'grid-quarter' ) ) ; ?>
 								</div>
 								<div class="text-wrap">
 									<h2 class="post-title-grid"><?php echo limit_character_count( apply_filters( 'the_title', $whatisthis[0]["play"][0]->post_title ), 22); ?></h2>

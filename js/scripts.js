@@ -17,11 +17,10 @@
 			}
 		});
 
-		$('.island-filter-button').on('click', function() {
+		$('.island-filter-button, .island-filter-menu li').on('click', function() {
 			$('.island-filter-menu.island-filter-list').toggleClass('fadeIn');
 			//$('.island-filter-menu.close').toggle();
 		});
-
 
 	});
 
@@ -44,7 +43,7 @@ jQuery(document).ready(function( $ ) {
 	});
 
 	var hashTagActive = "";
-	$("#menu-sidebar-scrolling-menu a").click(function (event) {
+	$("#menu-sidebar-scrolling-menu .child-island-menu-wrap li a:first-child").click(function (event) {
 		if(hashTagActive != this.hash) { //this will prevent if the user click several times the same link to freeze the scroll.
 			event.preventDefault();
 			//calculate destination place

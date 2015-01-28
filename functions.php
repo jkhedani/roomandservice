@@ -45,6 +45,8 @@ if (function_exists('add_theme_support'))
     add_image_size('related-thumb', 192, 112, true);
     add_image_size('grid-thumb', 265, 165, true);
     add_image_size('slider', 995, 435, true);
+    add_image_size('grid-half', 485, 302, true);
+    add_image_size('grid-quarter', 353, 220, true);
 
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
