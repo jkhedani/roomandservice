@@ -43,8 +43,10 @@ jQuery(document).ready(function( $ ) {
 	});
 
 	var hashTagActive = "";
-	$("#menu-sidebar-scrolling-menu .child-island-menu-wrap li a:first-child").click(function (event) {
-		if(hashTagActive != this.hash) { //this will prevent if the user click several times the same link to freeze the scroll.
+	$("#menu-sidebar-scrolling-menu .child-island-menu-wrap:not(.sub-island-menu-wrap) li a:first-child").click(function (event) {
+		if(hashTagActive != this.hash && this.hash) { //this will prevent if the user click several times the same link to freeze the scroll.
+
+			$(this).addClass('asdf');
 			event.preventDefault();
 			//calculate destination place
 			var dest = 0;
@@ -56,7 +58,7 @@ jQuery(document).ready(function( $ ) {
 			//go to destination
 			$('html,body').animate({
 				scrollTop: dest
-			}, 1500, 'swing');
+			}, 1200, 'swing');
 			hashTagActive = this.hash;
 		}
 	});
