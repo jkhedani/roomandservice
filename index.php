@@ -275,7 +275,7 @@
 
 		<?php 	$whatisthis = get_field('acf_maui', 'option');?>
 		<div class="waypoint" id="maui">
-			<h2 class="island-title">MAUI GUIDE</h2>
+			<h2 class="island-title">MAUI & LANAI</h2>
 			<div class="three-col-wrap">
 				<?php while(has_sub_field('acf_maui', 'option')): ?>
 
@@ -324,7 +324,7 @@
 
 			<?php 	$whatisthis = get_field('acf_kauai', 'option');?>
 			<div class="waypoint" id="kauai">
-				<h2 class="island-title">KAUAI GUIDE</h2>
+				<h2 class="island-title">KAUAI</h2>
 				<div class="three-col-wrap">
 					<?php while(has_sub_field('acf_kauai', 'option')): ?>
 						<div class="shop quarter-col">
@@ -371,7 +371,7 @@
 
 			<?php 	$whatisthis = get_field('acf_big_island', 'option');?>
 			<div class="waypoint" id="big-island">
-				<h2 class="island-title">BIG ISLAND GUIDE</h2>
+				<h2 class="island-title">BIG ISLAND</h2>
 				<div class="three-col-wrap">
 					<?php while(has_sub_field('acf_big_island', 'option')): ?>
 						<div class="shop half-col">
