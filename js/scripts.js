@@ -70,4 +70,11 @@ jQuery(document).ready(function( $ ) {
 		});
 	}
 
+	// Island filter Dropdown update value
+	$('.island-filter-menu li a').on('click', function(){
+		var value = $(this).text();
+		console.log(value);
+		$('.island-filter-button.dropdown').text( value );
+	});
+
 });

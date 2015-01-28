@@ -34,10 +34,6 @@
 
 			</h1>
 
-			<style>
-				.pagination{ display: none;}
-			</style>
-
 			<?php if ( is_category( 'culture' ) || is_category( 'style' ) || is_category( 'food' ) || is_category('arts') ) : ?>
 
 			<div class="island-filter">
