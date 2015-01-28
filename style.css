@@ -305,7 +305,8 @@ h2 {
 .three-col-wrap {
     max-width: 100%;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    padding-bottom: 0 !important;
 }
 
 .three-col-wrap:after {
@@ -704,7 +705,7 @@ main {
     width: 990px;
     /*margin: 3.4rem auto 0;*/
     margin: 147px auto 0;
-    padding: 2.7rem 3rem;
+    padding: 27px 3rem;
     min-height: 850px;
     position: relative;
 }
@@ -715,7 +716,9 @@ body.single main {
 }
 
 body.category-hotel main,
-body.category-shop main {
+body.category-shop main,
+body.category-eat main,
+body.category-play main {
   background: none;
 }
 
@@ -744,7 +747,7 @@ body.category-shop main {
 header.header {
   position: fixed;
   top: 0;
-  z-index: 9;
+  z-index: 900;
 }
 
 .header {
@@ -1132,6 +1135,7 @@ body.home .island-filter .island-filter-list,.island-filter .select_click {
   height: 9px;
   background: #FFF;
   margin: 0 4px !important;
+  border-radius: 0;
 }
 
 .flex-control-paging li a.flex-active {
@@ -1218,6 +1222,7 @@ body.home .island-filter .island-filter-list,.island-filter .select_click {
     left: 0;
 }
 
+body.post-type-archive-hotel .slide-data span,
 body.home .slide-data span,
 body.category .slide-data span {
   color: #FFF;
@@ -1226,6 +1231,7 @@ body.category .slide-data span {
   display: block;
 }
 
+body.post-type-archive-hotel h2.slide-title.flexslider-hg-title,
 body.home .slide-data h2.slide-title.flexslider-hg-title,
 body.category .slide-data h2.slide-title.flexslider-hg-title {
     margin: 0 0 -65px;
@@ -1270,8 +1276,9 @@ body.home .editorial-cat {
     width: 294px;
     background-color: #FFF;
     padding: 28px 22px;
-    min-height: 845px;
-    max-height: 845px;
+    height: 786px;
+    min-height: 786px;
+    max-height: 786px;
     box-shadow: 1px 1px 5px #CECECE;
 }
 
@@ -1684,6 +1691,7 @@ body.single-post .social-share {
 }
 
 .archive-name {
+  color: #0E0E0E;
     font-size: 3rem;
     font-weight: 400;
     line-height: 3.6rem;
@@ -1722,6 +1730,7 @@ body.single-post .social-share {
   padding: 5rem 4rem
 }
 
+.post-type-archive-hotel .editorial-more,
 .search-results .editorial-more,
 .search-no-results .editorial-more {
   padding: 0;
@@ -1862,10 +1871,16 @@ body.category .excerpt {
 body.category .editorial-more {
   padding: 0;
 }
+body.post-type-archive-hotel .island-filter h3.dropdown,
 body.category .island-filter h3.dropdown {
   width: 230px;
 }
 
+body.post-type-archive-hotel .island-filter h3.dropdown {
+  margin-top: -5px;
+}
+
+body.post-type-archive-hotel .island-filter .island-filter-list,
 body.category .island-filter .island-filter-list {
   width: 201px;
 }
@@ -1936,20 +1951,26 @@ body.single-post .flex-control-nav {
  * Hotel & Shop Styling
  */
  body.category-hotel main,
- body.category-shop main {
+ body.category-shop main,
+ body.category-eat main,
+ body.category-play main {
    margin: 110px auto 0;
    padding-left: 0;
    padding-right: 0;
  }
 
  body.category-hotel .flexslider,
- body.category-shop .flexslider {
+ body.category-shop .flexslider,
+ body.category-eat .flexslider,
+ body.category-play .flexslider {
     left:0;
     margin: 0 !important;
  }
 
  body.category-hotel .page-cat-title,
- body.category-shop .page-cat-title {
+ body.category-shop .page-cat-title,
+ body.category-eat .page-cat-title,
+ body.category-play .page-cat-title {
    text-align: center;
    float: none;
    font-size: 18px;
@@ -1958,7 +1979,9 @@ body.single-post .flex-control-nav {
  }
 
  body.category-hotel #content,
- body.category-shop #content {
+ body.category-shop #content,
+ body.category-eat #content,
+ body.category-play #content {
    background: #FFF;
    padding-left: 3rem;
    padding-right: 3rem;

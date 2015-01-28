@@ -25,6 +25,7 @@
       $post_thumbnail_url = wp_get_attachment_image_src( get_post_thumbnail_id( $query->post->ID ), 'grid-thumb' );
       $query->post->post_thumbnail_url = $post_thumbnail_url;
       array_push( $post_data, $query->post );
+      error_log('asdf');
     endwhile;
     wp_reset_postdata();
 

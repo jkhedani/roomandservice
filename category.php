@@ -39,13 +39,42 @@
 			</style>
 
 			<?php if ( is_category( 'culture' ) || is_category( 'style' ) || is_category( 'food' ) || is_category('arts') ) : ?>
+
 			<div class="island-filter">
 				<h3 class="island-filter-button dropdown">Filter by Island</h3>
 				<ul class="island-filter-menu island-filter-list">
-					<li><a href="" onclick="filterIsland('kauai')">Kauai</a></li>
-					<li><a href="" onclick="filterIsland('maui')">Maui</a></li>
-					<li><a href="" onclick="filterIsland('oahu')">Oahu</a></li>
-					<li><a href="" onclick="filterIsland('big-island')">Big Island</a></li>
+					<?php
+						$total = new WP_Query(array(
+							'post_type' 						 => 'post',
+							'post_count' 						 => -1,
+							'category_name'					 => strtolower( single_cat_title('', false) ) . "+oahu"
+						));
+					?>
+					<li><a class="jquery-ajax-get-posts jquery-ajax-clear-posts jquery-ajax-update-load-more" data-post-type="post" data-post-count="6" data-post-category="<?php echo "oahu+" . strtolower( single_cat_title('', false) ); ?>" data-post-offset="0" data-total-post-count="<?php echo $total->found_posts; ?>">Oahu</a></li>
+					<?php
+						$total = new WP_Query(array(
+							'post_type' 						 => 'post',
+							'post_count' 						 => -1,
+							'category_name'					 => strtolower( single_cat_title('', false) ) . "+kauai"
+						));
+					?>
+					<li><a class="jquery-ajax-get-posts jquery-ajax-clear-posts jquery-ajax-update-load-more" data-post-type="post" data-post-count="6" data-post-category="<?php echo "kauai+" . strtolower( single_cat_title('', false) ); ?>" data-post-offset="0" data-total-post-count="<?php echo $total->found_posts; ?>">Kauai</a></li>
+					<?php
+						$total = new WP_Query(array(
+							'post_type' 						 => 'post',
+							'post_count' 						 => -1,
+							'category_name'					 => strtolower( single_cat_title('', false) ) . "+maui"
+						));
+					?>
+					<li><a class="jquery-ajax-get-posts jquery-ajax-clear-posts jquery-ajax-update-load-more" data-post-type="post" data-post-count="6" data-post-category="<?php echo "maui+" . strtolower( single_cat_title('', false) ); ?>" data-post-offset="0" data-total-post-count="<?php echo $total->found_posts; ?>">Maui</a></li>
+					<?php
+						$total = new WP_Query(array(
+							'post_type' 						 => 'post',
+							'post_count' 						 => -1,
+							'category_name'					 => strtolower( single_cat_title('', false) ) . "+big-island"
+						));
+					?>
+					<li><a class="jquery-ajax-get-posts jquery-ajax-clear-posts jquery-ajax-update-load-more" data-post-type="post" data-post-count="6" data-post-category="<?php echo "big-island+" . strtolower( single_cat_title('', false) ); ?>" data-post-offset="0" data-total-post-count="<?php echo $total->found_posts; ?>">Big Island</a></li>
 				</ul>
 			</div>
 			<?php endif; ?>

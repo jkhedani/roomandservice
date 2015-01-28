@@ -101,7 +101,7 @@
 			));
 
 		?>
-		<button class="jquery-ajax-get-posts" data-post-type="post" data-post-count="6" data-post-category="<?php echo strtolower( $category_title ); ?>" data-post-offset="6" data-total-post-count="<?php echo $total->found_posts; ?>">Load More Posts</button>
+		<button class="jquery-ajax-get-posts jquery-ajax-get-posts-button" data-post-type="post" data-post-count="6" data-post-category="<?php echo strtolower( $category_title ); ?>" data-post-offset="6" data-total-post-count="<?php echo $total->found_posts; ?>">Load More Posts</button>
 
 	<?php elseif( in_category( 'hotel' ) ) : ?>
 		<?php
@@ -122,7 +122,7 @@
 
 		?>
 
-		<button class="jquery-ajax-get-posts" data-post-type="hotel" data-post-count="6" data-post-category="<?php echo strtolower($category_title); ?>" data-post-offset="6" data-total-post-count="<?php echo $total->found_posts; ?>">Load More Posts</button>
+		<button class="jquery-ajax-get-posts jquery-ajax-get-posts-button" data-post-type="hotel" data-post-count="6" data-post-category="<?php echo strtolower($category_title); ?>" data-post-offset="6" data-total-post-count="<?php echo $total->found_posts; ?>">Load More Posts</button>
 
 	<?php else : ?>
 		<?php
@@ -133,5 +133,5 @@
 				'category_name'					 => strtolower( single_cat_title('', false) )
 			));
 		?>
-		<button class="jquery-ajax-get-posts" data-post-type="post" data-post-count="6" data-post-category="<?php echo strtolower( single_cat_title('', false) ); ?>" data-post-offset="6" data-total-post-count="<?php echo $total->found_posts; ?>">Load More Posts</button>
+		<button class="jquery-ajax-get-posts jquery-ajax-get-posts-button" data-post-type="post" data-post-count="6" data-post-category="<?php echo strtolower( single_cat_title('', false) ); ?>" data-post-offset="6" data-total-post-count="<?php echo $total->found_posts; ?>">Load More Posts</button>
 	<?php endif; ?>

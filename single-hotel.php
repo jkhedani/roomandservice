@@ -63,7 +63,10 @@
 
 					<div id="hotel-info" class="hotel-info">
 						<span id="info-url" class="hotel-info-website">
-							<a href="<?php echo get_post_meta($post->ID, "_url", true); ?>"><?php echo get_post_meta($post->ID, "_url", true); ?></a>
+							<?php $url = get_post_meta($post->ID, "_url", true); ?>
+							<?php $replace = array("http://","https://"); ?>
+							<?php $urlDisplay = str_replace( $replace, "", $url); ?>
+							<a href="<?php echo get_post_meta($post->ID, "_url", true); ?>" target="_blank"><?php echo $urlDisplay; ?></a>
 						</span>
 						<span id="info-phone" class="hotel-info-phone">
 							<?php echo get_post_meta($post->ID, "_phone", true); ?>
