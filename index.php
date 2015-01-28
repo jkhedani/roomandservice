@@ -37,7 +37,7 @@
 
 		<div class="featured-articles-article">
 			<a href="<?php echo get_permalink( $pagepost->ID ); ?>">
-				<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'featured-thumb' ) ) ; ?>
+				<?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'featured-thumb-new' ) ) ; ?>
 			</a>
 			<p class="featured-articles-cat">
 				<?php
@@ -189,7 +189,7 @@
 			?>
 
 			<div class="editorial-article">
-				<a href="<?php echo get_permalink( $pagepost->ID ); ?>"><?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'grid-thumb' ) ) ; ?></a>
+				<a href="<?php echo get_permalink( $pagepost->ID ); ?>"><?php  if( has_post_thumbnail( $pagepost->ID) )  echo(get_the_post_thumbnail( $pagepost->ID, 'editorial-thumb-new' ) ) ; ?></a>
 				<p class="editorial-cat">
 					<?php
 					if ( get_field('primary_category', $pagepost->ID) ) {

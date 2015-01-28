@@ -48,6 +48,9 @@ if (function_exists('add_theme_support'))
     add_image_size('grid-half', 485, 302, true);
     add_image_size('grid-quarter', 353, 220, true);
 
+    add_image_size('featured-thumb-new', 485, 289, true);
+    add_image_size('editorial-thumb-new', 382, 204, true);
+
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(

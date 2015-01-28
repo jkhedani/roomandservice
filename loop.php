@@ -13,6 +13,7 @@
 			}
 		}
 
+		// CATEGORY: EAT SHOP PLAY
 		if( is_category( 'eat' ) || is_category( 'shop' ) || is_category( 'play' ) ) :
 			$query = new WP_Query(array(
 				'post_type' 						 => 'post',
@@ -20,6 +21,8 @@
 				'posts_per_archive_page' => 6,
 				'category_name'					 => $category_title
 			));
+
+		// CATEGORY: WHERE TO STAY/HOTEL
 		elseif ( is_category( 'hotel' ) ) :
 			$categories = get_the_category();
 			$separator = "+";
@@ -35,6 +38,8 @@
 				'posts_per_archive_page' => 6,
 				'category_name'					 => strtolower( $category_title )
 			));
+
+		// CATEGORY: CULTURE, FOOD, EXPLORE & ARTS
 		else :
 			$query = new WP_Query(array(
 				'post_type' 						 => 'post',
@@ -76,7 +81,7 @@
 	<?php wp_reset_postdata(); ?>
 	</div><!-- .three-col-wrap -->
 
-	<?php if( is_category( 'eat' ) || is_category( 'shop' ) || is_category( 'play' ) ) : ?>
+	<?php if( in_category( 'eat' ) || in_category( 'shop' ) || in_category( 'play' ) ) : ?>
 		<?php
 			$categories = get_the_category();
 			$separator = "+";
@@ -88,9 +93,17 @@
 					$category_title .= $category->name . $separator;
 				}
 			}
+
+			$total = new WP_Query(array(
+				'post_type' 						 => 'post',
+				'post_count' 						 => -1,
+				'category_name'					 => strtolower( $category_title )
+			));
+
 		?>
-		<button class="jquery-ajax-get-posts" data-post-type="post" data-post-count="6" data-post-category="<?php echo strtolower( $category_title ); ?>" data-post-offset="6">Load More Posts</button>
-	<?php elseif( is_category( 'hotel' ) ) : ?>
+		<button class="jquery-ajax-get-posts" data-post-type="post" data-post-count="6" data-post-category="<?php echo strtolower( $category_title ); ?>" data-post-offset="6" data-total-post-count="<?php echo $total->found_posts; ?>">Load More Posts</button>
+
+	<?php elseif( in_category( 'hotel' ) ) : ?>
 		<?php
 		$categories = get_the_category();
 		$separator = "+";
@@ -100,8 +113,25 @@
 				$category_title .= $category->name;
 			}
 		}
+
+		$total = new WP_Query(array(
+			'post_type' 						 => 'hotel',
+			'post_count' 						 => -1,
+			'category_name'					 => strtolower( $category_title )
+		));
+
 		?>
-		<button class="jquery-ajax-get-posts" data-post-type="hotel" data-post-count="6" data-post-category="<?php echo strtolower($category_title); ?>" data-post-offset="6">Load More Posts</button>
+
+		<button class="jquery-ajax-get-posts" data-post-type="hotel" data-post-count="6" data-post-category="<?php echo strtolower($category_title); ?>" data-post-offset="6" data-total-post-count="<?php echo $total->found_posts; ?>">Load More Posts</button>
+
 	<?php else : ?>
-		<button class="jquery-ajax-get-posts" data-post-type="post" data-post-count="6" data-post-category="<?php echo strtolower( single_cat_title('', false) ); ?>" data-post-offset="6">Load More Posts</button>
+		<?php
+			// Total Post Count
+			$total = new WP_Query(array(
+				'post_type' 						 => 'post',
+				'post_count' 						 => -1,
+				'category_name'					 => strtolower( single_cat_title('', false) )
+			));
+		?>
+		<button class="jquery-ajax-get-posts" data-post-type="post" data-post-count="6" data-post-category="<?php echo strtolower( single_cat_title('', false) ); ?>" data-post-offset="6" data-total-post-count="<?php echo $total->found_posts; ?>">Load More Posts</button>
 	<?php endif; ?>

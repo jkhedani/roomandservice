@@ -30,8 +30,8 @@
 
     // generate the response
     $response = json_encode( array(
-      'success'   => true,
-      'post_data' => $post_data
+      'success'     => true,
+      'post_data'   => $post_data
     ));
 
     // response output
