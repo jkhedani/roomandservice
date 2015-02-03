@@ -36,6 +36,7 @@
 					else if(cat=="oahu"){document.write('Oahu');}
 					else if(cat=="kauai"){document.write('Kauai');}
 					else if(cat=="big-island"){document.write('Big Island');}
+					else if(cat=="starwood"){document.write('Starwood');}
 					else{};
 			</script>
 
