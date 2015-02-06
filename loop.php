@@ -109,10 +109,13 @@
 		$separator = "+";
 		$category_title = "";
 		foreach($categories as $category) {
-			if ($category === end($categories)) {
+			if ( $category->name === "Hotel" || $category->name ==='Starwood' ) {
+				// do nothing
+			} else {
 				$category_title .= $category->name;
 			}
 		}
+		echo $category_title;
 
 		$total = new WP_Query(array(
 			'post_type' 						 => 'hotel',
@@ -122,7 +125,7 @@
 
 		?>
 
-		<button class="jquery-ajax-get-posts jquery-ajax-get-posts-button" data-post-type="hotel" data-post-count="6" data-post-category="hotel+<?php echo strtolower($category_title); ?>" data-post-offset="6" data-total-post-count="<?php echo $total->found_posts; ?>">Load More Posts</button>
+		<button class="jquery-ajax-get-posts jquery-ajax-get-posts-button" data-post-type="hotel" data-post-count="6" data-post-category="<?php echo strtolower($category_title); ?>" data-post-offset="6" data-total-post-count="<?php echo $total->found_posts; ?>">Load More Posts</button>
 
 	<?php else : ?>
 		<?php
