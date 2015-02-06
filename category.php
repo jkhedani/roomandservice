@@ -93,6 +93,20 @@
 			<!-- slider -->
 			<?php
 
+					if ( is_category('culture') || is_category('explore') || is_category('food') || is_category('arts') ) {
+						$categories = get_the_category();
+						if($categories){
+							foreach($categories as $category) {
+								if ( $category->name === $cat_title ) {
+									$testz = strtolower($category->name);
+									$testz = str_replace(' ', '', $testz);
+									$testz = "acf_slider_".$testz;
+									$whatisthis = get_field($testz , 'option');
+								}
+							}
+						}
+					}
+
 					if ( is_category('eat') ) {
 						$categories = get_the_category();
 						if($categories){
