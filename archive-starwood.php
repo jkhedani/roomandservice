@@ -14,7 +14,7 @@
 						$total = new WP_Query(array(
 							'post_type' 						 => 'hotel',
 							'post_count' 						 => -1,
-							'category_name'					 => "oahu"
+							'category_name'					 => $cat . "+oahu"
 						));
 					?>
 					<li><a class="jquery-ajax-get-posts jquery-ajax-clear-posts jquery-ajax-update-load-more" data-post-type="hotel" data-post-count="6" data-post-category="<?php echo $cat; ?>+oahu" data-post-offset="0" data-total-post-count="<?php echo $total->found_posts; ?>">Oahu</a></li>
