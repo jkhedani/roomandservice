@@ -94,27 +94,46 @@
 			<?php
 
 					if ( is_category('eat') ) {
-						$testz = single_cat_title("", false);
-						$testz = strtolower($testz);
-						$onthis = $testz;
-						$testz = "eat_".$testz."_slider";
-						$whatisthis = get_field($testz , 'option');
+						$categories = get_the_category();
+						if($categories){
+							foreach($categories as $category) {
+								if ( $category->name !== "Eat" ) {
+									$testz = strtolower($category->name);
+									$testz = str_replace(' ', '', $testz);
+									$testz = "eat_".$testz."_slider";
+									$whatisthis = get_field($testz , 'option');
+								}
+							}
+						}
 					}
 
 					if ( is_category('shop') ) {
-						$testz = single_cat_title("", false);
-						$testz = strtolower($testz);
-						$onthis = $testz;
-						$testz = "shop_".$testz."_slider";
-						$whatisthis = get_field($testz , 'option');
+						$categories = get_the_category();
+						if($categories){
+							foreach($categories as $category) {
+								if ( $category->name !== "Shop" ) {
+									$testz = strtolower($category->name);
+									error_log($testz);
+									$testz = str_replace(' ', '', $testz);
+									$testz = "shop_".$testz."_slider";
+									$whatisthis = get_field($testz , 'option');
+								}
+							}
+						}
 					}
 
 					if ( is_category('play') ) {
-						$testz = single_cat_title("", false);
-						$testz = strtolower($testz);
-						$onthis = $testz;
-						$testz = "play_".$testz."_slider";
-						$whatisthis = get_field($testz , 'option');
+						$categories = get_the_category();
+						if($categories){
+							foreach($categories as $category) {
+								if ( $category->name !== "Play" ) {
+									$testz = strtolower($category->name);
+									$testz = str_replace(' ', '', $testz);
+									$testz = "play_".$testz."_slider";
+									$whatisthis = get_field($testz , 'option');
+								}
+							}
+						}
 					}
 
 					if ( is_category('hotel') ) {
