@@ -117,7 +117,6 @@
 				$category_title .= $category->name;
 			}
 		}
-		echo $category_title;
 
 		$total = new WP_Query(array(
 			'post_type' 						 => 'hotel',
