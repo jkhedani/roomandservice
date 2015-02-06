@@ -28,7 +28,9 @@
 			$separator = "+";
 			$category_title = "";
 			foreach($categories as $category) {
-				if ($category === end($categories)) {
+				if ( $category->name === "Hotel" || $category->name ==='Starwood' ) {
+					// do nothing
+				} else {
 					$category_title .= $category->name;
 				}
 			}
