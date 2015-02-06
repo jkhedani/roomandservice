@@ -35,10 +35,18 @@
 					<div class="header-wrap">
 					<!-- logo -->
 					<div class="logo">
+						<?php $cat = get_query_var( 'cats' ); ?>
+						<?php if ( $cat !== 'starwood' ) : ?>
 						<a href="<?php echo home_url(); ?>">
 							<!-- svg available do later -->
 							<img src="<?php echo get_template_directory_uri(); ?>/img/rm-logo.png" alt="Room and Service Logo" class="logo-img">
 						</a>
+						<?php else : ?>
+							<a href="javascript:void(0);">
+								<!-- svg available do later -->
+								<img src="<?php echo get_template_directory_uri(); ?>/img/rm-logo.png" alt="Room and Service Logo" class="logo-img">
+							</a>
+						<?php endif; ?>
 					</div>
 					<!-- /logo -->
 

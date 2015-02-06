@@ -478,6 +478,27 @@ fields added:
 	- _amenities
 */
 
+add_filter('query_vars', 'add_query_vars');
+function add_query_vars($aVars) {
+  $aVars[] = "cats"; // represents the name of the product category as shown in the URL
+  return $aVars;
+}
+
+add_filter('rewrite_rules_array', 'add_rewrite_rules');
+function add_rewrite_rules($aRules) {
+  //  $aNewRules = array('hotel/([\b\starwood\b]+)/?$' => 'index.php?post_type=hotel&cats=$matches[1]');
+  $aNewRules6 = array('hotel/(\bbig-island/?)$' => 'index.php?post_type=hotel&cats=$matches[1]');
+  $aNewRules5 = array('hotel/(\bmaui/?)$' => 'index.php?post_type=hotel&cats=$matches[1]');
+  $aNewRules4 = array('hotel/(\bkauai/?)$' => 'index.php?post_type=hotel&cats=$matches[1]');
+  $aNewRules3 = array('hotel/(\boahu/?)$' => 'index.php?post_type=hotel&cats=$matches[1]');
+  $aNewRules2 = array('hotel/(\bstarwood/?)$' => 'index.php?post_type=hotel&cats=$matches[1]');
+  $aNewRules = array('hotel/^((?!starwood/?).)*$' => 'index.php?post_type=hotel&pagename=$matches[1]');
+  //$aNewRules2 = array('hotel/^((?!starwood).)*/?$' => 'index.php?post_type=hotel&pagename=$matches[1]');
+  //$aNewRules = array('hotel/([^/]+)/([^/]+)/?$' => 'index.php?post_type=hotel&cats=$matches[1]&pagename=$matches[1]');
+  $aRules = $aNewRules + $aNewRules2 + $aNewRules3 + $aNewRules4 + $aNewRules5 + $aNewRules6 + $aRules;
+  return $aRules;
+}
+
 function create_post_type_hotel()
 {
     register_taxonomy_for_object_type('category', 'hotel'); // Register Taxonomies for Category
@@ -498,6 +519,10 @@ function create_post_type_hotel()
             'not_found' => __('No Hotel posts found', 'hotel'),
             'not_found_in_trash' => __('No Hotel posts found in Trash', 'hotel')
         ),
+        // 'rewrite' =>  array(
+        //   'slug' => '',
+        // ),
+        'publicly_queryable' => true,
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,

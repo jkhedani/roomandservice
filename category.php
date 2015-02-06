@@ -49,7 +49,7 @@
 
 			</h1>
 
-			<?php if ( is_category( 'culture' ) || is_category( 'style' ) || is_category( 'food' ) || is_category('arts') ) : ?>
+			<?php if ( is_category( 'culture' ) || is_category( 'explore' ) || is_category( 'food' ) || is_category('arts') ) : ?>
 
 			<div class="island-filter">
 				<h3 class="island-filter-button dropdown">Filter by Island</h3>
@@ -122,7 +122,7 @@
 			</div>
 			<!-- end slider -->
 
-			<?php if(is_category( 'culture' ) || is_category( 'style' ) || is_category( 'food' ) || is_category('arts')) : ?>
+			<?php if(is_category( 'culture' ) || is_category( 'explore' ) || is_category( 'food' ) || is_category('arts')) : ?>
 				<section class="featured-articles">
 
 					<?php
