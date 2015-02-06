@@ -92,11 +92,28 @@
 
 			<!-- slider -->
 			<?php
-					if ( ! is_category('hotel') ) {
+
+					if ( is_category('eat') ) {
 						$testz = single_cat_title("", false);
 						$testz = strtolower($testz);
 						$onthis = $testz;
-						$testz = "acf_slider_".$testz;
+						$testz = "eat_".$testz."_slider";
+						$whatisthis = get_field($testz , 'option');
+					}
+
+					if ( is_category('shop') ) {
+						$testz = single_cat_title("", false);
+						$testz = strtolower($testz);
+						$onthis = $testz;
+						$testz = "shop_".$testz."_slider";
+						$whatisthis = get_field($testz , 'option');
+					}
+
+					if ( is_category('play') ) {
+						$testz = single_cat_title("", false);
+						$testz = strtolower($testz);
+						$onthis = $testz;
+						$testz = "play_".$testz."_slider";
 						$whatisthis = get_field($testz , 'option');
 					}
 
