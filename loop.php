@@ -41,6 +41,8 @@
 					$category_title .= $category->name;
 				}
 			}
+
+			$category_title .= "+starwood";
 			$query = new WP_Query(array(
 				'post_type' 						 => 'hotel',
 				'posts_per_page' 				 => 6,
