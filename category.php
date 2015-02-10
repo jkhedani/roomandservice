@@ -166,17 +166,22 @@
 					}
 
 					if ( is_category('hotel') ) {
-						$categories = get_the_category();
-						if($categories){
-							foreach($categories as $category) {
-								if ( $category->name !== "Hotel" ) {
-									$testz = strtolower($category->name);
-									$testz = str_replace(' ', '', $testz);
-									$testz = "hotel_".$testz."_slider";
-									$whatisthis = get_field($testz , 'option');
-								}
-							}
-						}
+						// $categories = get_the_category();
+						// if($categories){
+						// 	foreach($categories as $category) {
+						// 		if ( $category->name !== "Hotel" ) {
+						// 			$testz = strtolower($category->name);
+						// 			$testz = str_replace(' ', '', $testz);
+						// 			$testz = "hotel_".$testz."_slider";
+						// 			$whatisthis = get_field($testz , 'option');
+						// 		}
+						// 	}
+						// }
+						$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+						$parsed_url = explode('/category/hotel+', parse_url($actual_link, PHP_URL_PATH) );
+						$category_query = str_replace('/', '', $parsed_url[1]);
+						$testz = "hotel_".$category_query."_slider";
+						$whatisthis = get_field($testz , 'option');
 					}
 			?>
 
