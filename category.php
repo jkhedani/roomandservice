@@ -142,7 +142,7 @@
 						$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 						$parsed_url = explode('/category/shop+', parse_url($actual_link, PHP_URL_PATH) );
 						$category_query = str_replace('/', '', $parsed_url[1]);
-						$testz = "eat_".$category_query."_slider";
+						$testz = "shop_".$category_query."_slider";
 						$whatisthis = get_field($testz , 'option');
 					}
 
@@ -161,7 +161,7 @@
 						$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 						$parsed_url = explode('/category/play+', parse_url($actual_link, PHP_URL_PATH) );
 						$category_query = str_replace('/', '', $parsed_url[1]);
-						$testz = "eat_".$category_query."_slider";
+						$testz = "play_".$category_query."_slider";
 						$whatisthis = get_field($testz , 'option');
 					}
 
