@@ -18,7 +18,6 @@
 				<h1 class="archive-name page-cat-title"><?php _e( 'Archives', 'html5blank' ); ?></h1>
 				<?php } ?>
 
-
 			<div class="island-filter">
 				<h3 class="island-filter-button dropdown">Filter by Island</h3>
 				<ul class="island-filter-menu island-filter-list">
@@ -78,7 +77,8 @@
 				// Total Post Count
 				$total = new WP_Query(array(
 					'post_type' 						 => 'hotel',
-					'post_count' 						 => -1
+					'post_count' 						 => -1,
+					'category_name'					 => 'starwood'
 				));
 			?>
 			<button class="jquery-ajax-get-posts jquery-ajax-get-posts-button" data-post-type="hotel" data-post-count="6" data-post-category="" data-post-offset="6" data-total-post-count="<?php echo $total->found_posts; ?>">Load More Posts</button>

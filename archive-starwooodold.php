@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<?php $cat = get_query_var( 'cats' ); ?>
-
+	
 	<main role="main">
 		<!-- section -->
 		<section>

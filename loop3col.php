@@ -50,6 +50,7 @@
 		'post_type' 						 => 'hotel',
 		'posts_per_page' 				 => 6,
 		'posts_per_archive_page' => 6,
+		'category_name'				   => 'starwood'
 	));
 
 	while ( $query->have_posts() ) : $query->the_post(); ?>
