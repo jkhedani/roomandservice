@@ -1,4 +1,3 @@
-
 	<div class="three-col-wrap jquery-ajax-post-container">
 	<?php
 
@@ -15,11 +14,19 @@
 
 		// CATEGORY: EAT SHOP PLAY
 		if( is_category( 'eat' ) || is_category( 'shop' ) || is_category( 'play' ) ) :
+			//echo strtolower( single_cat_title('', false) );
+			//echo get_the_title();
+			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			$parsed_url = explode('/category', parse_url($actual_link, PHP_URL_PATH) );
+			$category_query = str_replace('/', '', $parsed_url[1]);
+			// echo $category_query;
+			//echo $category_title;
+			//echo var_dump( get_the_category($post->ID) );
 			$query = new WP_Query(array(
 				'post_type' 						 => 'post',
 				'posts_per_page' 				 => 6,
 				'posts_per_archive_page' => 6,
-				'category_name'					 => $category_title
+				'category_name'					 => $category_query
 			));
 
 		// CATEGORY: WHERE TO STAY/HOTEL
